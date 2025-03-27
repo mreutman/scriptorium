@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{fontspec}
 \usepackage{ifthen}
 \usepackage{multicol}
@@ -13,6 +13,8 @@
   top=1.2in,
   bottom=1.2in,
 ]{geometry}
+
+\renewcommand{\baselinestretch}{1.25} 
 
 \newfontfamily{\Alegreya}[
   Path = ./../litterae/alegreya-ht-pro-full-pack-otf/,
@@ -89,12 +91,11 @@
     \begin{center}
     \rule{5em}{0.4pt}
     \end{center}
-    \smallskip
   }
 
   \begin{center}
   {
-    \AlegreyaSC\addfontfeature{LetterSpace=40.0}
+    \AlegreyaSC\addfontfeature{LetterSpace=30.0}
     \lowercase{\fontseries{ub}\selectfont\large\fontdimen2\font=1.2em Dīvīsiō #1,#2}
   }
   \end{center}
@@ -102,66 +103,45 @@
   \ifthenelse{\equal{1}{#2}}
   {
     \begin{flushleft}
+    \noindent\hangindent=2em\hangafter=1 
     \AlegreyaSC\fontdimen2\font=0.3em
-
-    \lowercase {
+    \lowercase {%
       {Glōria tibī, Domine, glōria tibī}
-      
-      \medskip
       
       {Rex caelestis, Consōlātor, Spīritus vēritātis, quī extās ubīque et omnia implēs, Tezaurus beneficiōrum et Largītor vītae: Venī et manē in nōbīs, atque dē omnī immunditiā mundā nōs, et salvās fac animās nostrās, Benigne.}
       
-      \medskip
-      
       {Sanctus Deus, Sanctus Fortis, Sanctus Immortālis, miserēre nōbīs. \hspace{\parindent} \textit{\small ( rep. 3 )}}
 
-      \smallskip
-
       {Glōria Patri et Fīliō et Spīrituī Sanctō, et nunc et semper, et in saecula saeculorum. Āmen.}
-
-      \medskip
       
       {Sanctissima Trīnitās, miserēre nōbīs. Dominātor, dēlē peccāta nostra. Domine, ignōsce inīquitātēs nostrās. Sancte, vīsitā et sānā infirmitātēs nostras, propter nōmen tuum.}
       
-      \medskip
-      
       {Domine, miserēre. \hspace{\parindent} \textit{\small ( rep. 3 )}}
-      
-      \smallskip
       
       {Glōria Patri et Fīliō et Spīrituī Sanctō, et nunc et semper, et in saecula saeculorum. Āmen.}
       
-      \medskip
-      
       {Pater noster, quī es in caelīs, sanctificētur nōmen tuum. Adveniat regnum tuum; fīat voluntās tua, sīcut in caelō et in terrā. Pānem nostrum supersubstantiālem dā nōbīs hodiē, et dīmitte nōbīs dēbita nostra, sīcut et nōs dīmittimus dēbitōribus nostrīs, et nē nōs indūcās in tentātiōnem, sed līberā nōs ā Malō. Āmen.}
-
-      \medskip
 
       {Per ōrātiōnēs sanctōrum patrum, Domine Jēsū Christe Fīlī Deī, miserēre nōbīs.}
 
-      \medskip
-
       {Domine, miserēre. \hspace{\parindent} \textit{\small ( rep. 40 )}}
+      
+      \smallskip
     }
     \end{flushleft}
   }
   {
-    \begin{flushleft}
     \AlegreyaSC\fontdimen2\font=0.3em
 
-    \lowercase{Glōria Patrī et Fīliō et Spīrituī Sanctō, et nunc et semper, et in saecula saeculōrum. Āmen.}
-
-    \end{flushleft}
+    \lowercase{\noindent Glōria Patrī et Fīliō et Spīrituī Sanctō, et nunc et semper, et in saecula saeculōrum. Āmen.}
   }
 
   \ifthenelse{\equal{1}{#2}}
   {
-    \smallskip
     \begin{center}
     \Alegreya
     {\fontseries{ub}\selectfont\large †}
     \end{center}
-    \smallskip
   }
   {
     \begin{center}
