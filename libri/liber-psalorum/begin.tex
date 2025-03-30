@@ -1,9 +1,11 @@
-\documentclass[11pt]{article}
+\documentclass[twoside,11pt]{article}
+\usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{ifthen}
 \usepackage{multicol}
 \usepackage{needspace}
 \usepackage{ragged2e}
+\usepackage{titlesec}
 
 \usepackage[
   papersize={8.5in,11in},
@@ -13,8 +15,6 @@
   top=1.2in,
   bottom=1.2in,
 ]{geometry}
-
-\renewcommand{\baselinestretch}{1.25} 
 
 \newfontfamily{\Alegreya}[
   Path = ./../litterae/alegreya-ht-pro-full-pack-otf/,
@@ -52,31 +52,27 @@
   Numbers={Lining, Monospaced}
 ]{AlegreyaSC}
 
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyheadoffset[LO,RE]{0.3in}
+%\fancyhead[C]{\mark}
+%\fancyhead[RE]{\textit{\small\addfontfeature{LetterSpace=40.0}\fontdimen2\font=2em\rightmark}}
+%\fancyfoot[C]{\thepage}
+%\fancyfoot[RE]{\textit{\small\addfontfeature{LetterSpace=40.0} \thepage}}
+%\cfoot{\thepage}
+%\renewcommand{\headrulewidth}{0pt}
+%\setlength{\headheight}{14pt}
+
+\renewcommand{\baselinestretch}{1.25} 
 \setlength{\RaggedRightParindent}{\parindent}
 \setlength{\columnsep}{\parindent}
 
-\newcommand{\psalmKathisma}[1] {%
-  \bigskip
-  %\noindent{%
-    \textbf{%
-      {\Large\addfontfeature{LetterSpace=30.0} SĒDĒS #1}
-    }
-  %}
-}
-
-%\newcommand{\textStasis[1] {%
-  %\ifthenelse{\equal{#1}{\string 1}}%
-    %{statiō prīma}{%
-      %\ifthenelse{\equal{#1}{\string 2}}%
-      %{statiō secunda}{%
-        %\ifthenelse{\equal{#1}{\string 3}}%
-        %{statiō tertia}%
-        %{INVALID}%
-      %}
-    %}
-%}
-
 \newcommand{\psalmKathismaStasis}[2] {
+  \markboth
+    {\AlegreyaSC\addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em \hfill dīvīsiō #1,#2 \hfill}
+    {\AlegreyaSC\addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em \hfill dīvīsiō #1,#2 \hfill}
+
   \ifthenelse{\equal{1}{#2}}
   {
     \needspace{15\baselineskip}
@@ -197,4 +193,31 @@
 }
 
 \begin{document}
+
+\pagestyle{empty}
+{
+  \AlegreyaSC\fontdimen2\font=0.3em
+
+  \begin{center}
+  \begin{tabular}{||c c||} 
+   \hline
+   dīvīsiō & psalmī \\ [0.5ex] 
+   \hline\hline
+   1 & 6 \\ 
+   \hline
+   2 & 7 \\
+   \hline
+   3 & 545 \\
+   \hline
+   4 & 545 \\
+   \hline
+   5 & 88 \\
+   \hline
+  \end{tabular}
+  \end{center}
+}
+
+\newpage
+\pagestyle{myheadings}
+\setcounter{page}{1}
 \begin{multicols}{2}
