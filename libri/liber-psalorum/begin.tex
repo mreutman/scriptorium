@@ -53,19 +53,7 @@
   Numbers={Lining, Monospaced}
 ]{AlegreyaSC}
 
-
-%\pagestyle{fancy}
-%\fancyhf{}
-%\fancyheadoffset[LO,RE]{0.3in}
-%\fancyhead[C]{\mark}
-%\fancyhead[RE]{\textit{\small\addfontfeature{LetterSpace=40.0}\fontdimen2\font=2em\rightmark}}
-%\fancyfoot[C]{\thepage}
-%\fancyfoot[RE]{\textit{\small\addfontfeature{LetterSpace=40.0} \thepage}}
-%\cfoot{\thepage}
-%\renewcommand{\headrulewidth}{0pt}
-%\setlength{\headheight}{14pt}
-
-\renewcommand{\baselinestretch}{1.25} 
+\renewcommand{\baselinestretch}{1.25}
 \setlength{\RaggedRightParindent}{\parindent}
 \setlength{\columnsep}{\parindent}
 
@@ -100,29 +88,29 @@
   \ifthenelse{\equal{1}{#2}}
   {
     \begin{flushleft}
-    \noindent\hangindent=2em\hangafter=1 
+    \noindent\hangindent=2em\hangafter=1
     \AlegreyaSC\fontdimen2\font=0.3em
     \lowercase {%
       {Glōria tibī, Domine, glōria tibī}
-      
+
       {Rex caelestis, Consōlātor, Spīritus vēritātis, quī extās ubīque et omnia implēs, Tezaurus beneficiōrum et Largītor vītae: Venī et manē in nōbīs, atque dē omnī immunditiā mundā nōs, et salvās fac animās nostrās, Benigne.}
-      
+
       {Sanctus Deus, Sanctus Fortis, Sanctus Immortālis, miserēre nōbīs. \hspace{\parindent} \textit{\small ( rep. 3 )}}
 
       {Glōria Patri et Fīliō et Spīrituī Sanctō, et nunc et semper, et in saecula saeculorum. Āmen.}
-      
+
       {Sanctissima Trīnitās, miserēre nōbīs. Dominātor, dēlē peccāta nostra. Domine, ignōsce inīquitātēs nostrās. Sancte, vīsitā et sānā infirmitātēs nostras, propter nōmen tuum.}
-      
+
       {Domine, miserēre. \hspace{\parindent} \textit{\small ( rep. 3 )}}
-      
+
       {Glōria Patri et Fīliō et Spīrituī Sanctō, et nunc et semper, et in saecula saeculorum. Āmen.}
-      
+
       {Pater noster, quī es in caelīs, sanctificētur nōmen tuum. Adveniat regnum tuum; fīat voluntās tua, sīcut in caelō et in terrā. Pānem nostrum supersubstantiālem dā nōbīs hodiē, et dīmitte nōbīs dēbita nostra, sīcut et nōs dīmittimus dēbitōribus nostrīs, et nē nōs indūcās in tentātiōnem, sed līberā nōs ā Malō. Āmen.}
 
       {Per ōrātiōnēs sanctōrum patrum, Domine Jēsū Christe Fīlī Deī, miserēre nōbīs.}
 
       {Domine, miserēre. \hspace{\parindent} \textit{\small ( rep. 40 )}}
-      
+
       \smallskip
     }
     \end{flushleft}
@@ -184,7 +172,7 @@
 
 \newcommand{\psalmVerse}[2] {%
   \begin{flushleft}
-  \noindent\hangindent=4em\hangafter=1 
+  \noindent\hangindent=4em\hangafter=1
   {\AlegreyaSC
     \lowercase{
       {\psalmVerseNumber{#1} {\fontdimen2\font=0.3em #2}}
@@ -204,9 +192,9 @@
   \vspace*{15em}
 
   {\bfseries\Huge\fontdimen2\font=1em LIBER PSALMŌRUM}
-  
+
   \vspace*{5em}
-  
+
   {\bfseries\Large\fontdimen2\font=1em SECUNDUM GRAECUM}
 
   \vfill
@@ -258,7 +246,7 @@
     \centering
     \begin{tabular}{|cccc|}
     \hline
-    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{major}}} & \multicolumn{3}{c|}{\textbf{minor}}   \\ \cline{2-4} 
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{major}}} & \multicolumn{3}{c|}{\textbf{minor}}   \\ \cline{2-4}
     \multicolumn{1}{|c|}{}   & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{\textbf{2}} & \multicolumn{1}{c|}{\textbf{3}} \\ \hline
     \multicolumn{1}{|c|}{\textbf{1}}  & \multicolumn{1}{l|}{1-3} & \multicolumn{1}{l|}{4-6} & \multicolumn{1}{l|}{7-8} \\ \hline
     \multicolumn{1}{|c|}{\textbf{2}}  & \multicolumn{1}{l|}{9-10} & \multicolumn{1}{l|}{11-13} & \multicolumn{1}{l|}{14-16} \\ \hline
@@ -289,4 +277,80 @@
 
 \pagestyle{myheadings}
 \setcounter{page}{1}
+
+\vspace*{0.75em}
+
+{
+  \begin{center}
+  \rule{5em}{0.4pt}
+  \end{center}
+}
+
+{
+  \begin{center}
+  \AlegreyaSC\addfontfeature{LetterSpace=20.0}\fontseries{ub}\Large\fontdimen2\font=1.2em
+  simbolum fidēī
+  \end{center}
+}
+
+\lowercase{
+  \AlegreyaSC\fontdimen2\font=0.3em
+
+  \bigskip
+
+  \noindent Crēdō in ūnum Deum, Patrem omnipotentem,
+
+  factōrem caelī et terrae, vīsibilium omnium et invīsibilium.
+
+  \bigskip
+
+  \noindent Et in ūnum Dominum Jēsum Chrīstum, Fīlium Deī ūnigenitum,
+
+  et ex Patre nātum ante omnia saecula;
+
+  Lūmen dē Lūmine, Deum vērum dē Deō vērō,
+
+  genitum nōn factum, consubstantiālem Patrī, per quem omnia facta sunt.
+
+  Quī propter nōs hominēs et propter nostram salūtem dēscendit dē caelīs,
+
+  et incarnātus est dē Spīritū Sānctō ex Mariā Virgine, et homō factus est.
+
+  Crucifixus etiam prō nōbīs sub Pontiō Pīlātō, passus et sepultus est,
+
+  et resurrexit tertiā diē, secundum Scrīptūrās,
+
+  et ascendit in caelum, sedet ad dexteram Patris.
+
+  Et iterum ventūrus est cum glōriā, jūdicāre vīvōs et mortuōs, cujus regnī nōn erit fīnis.
+
+  \bigskip
+
+  \noindent Et in Spīritum Sānctum, Dominum et vīvificantem, quī ex Patre prōcēdit.
+
+  Quī cum Patre et Fīliō simul adōrātur et conglōrificātur; quī locūtus est per profētās.
+
+  \bigskip
+
+  \noindent Et ūnam, sānctam, cattolicam, et apostolicam Ecclēsiam.
+
+  Confiteor ūnum baptisma in remissiōnem peccātōrum.
+
+  Et exspectō resurrēctiōnem mortuōrum, et vītam ventūrī saeculī.
+
+  \bigskip
+
+  \noindent Āmen.
+
+  \bigskip
+}
+
+{
+  \begin{center}
+  \rule{5em}{0.4pt}
+  \end{center}
+}
+
+\newpage
+
 \begin{multicols}{2}
