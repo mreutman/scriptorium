@@ -1,0 +1,43 @@
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+<Multi_key>     <less>    : "Ò"
+<Multi_key>     <comma>   : "ò"
+
+<Multi_key>     <greater> : "È"
+<Multi_key>     <period>  : "è"
+
+<Multi_key>     <Y> : "Ì"
+<Multi_key>     <y> : "ì"
+
+<Multi_key>     <P> : "Ù"
+<Multi_key>     <p> : "ù"
+
+<Multi_key>     <X> : "Î"
+<Multi_key>     <x> : "î"
+
+<Multi_key>     <K> : "Û"
+<Multi_key>     <k> : "û"
+
+<Multi_key>     <J> : "Ê"
+<Multi_key>     <j> : "ê"
+
+<Multi_key>     <1> : "ă"
+<Multi_key>     <2> : "ĕ"
+<Multi_key>     <3> : "ŏ"
+<Multi_key>     <4> : "ŭ"
+<Multi_key>     <5> : "ĭ"
+
+<Multi_key>     <a> : "á"
+<Multi_key>     <e> : "é"
+<Multi_key>     <i> : "í"
+<Multi_key>     <o> : "ó"
+<Multi_key>     <u> : "ú"
+<Multi_key>     <A> : "Á"
+<Multi_key>     <E> : "É"
+<Multi_key>     <I> : "Í"
+<Multi_key>     <O> : "Ó"
+<Multi_key>     <U> : "Ú"
+
+<Multi_key>     <exclam> : "¡"
+<Multi_key>     <question> : "¿"
+<Multi_key>     <apostrophe> : "«"
+<Multi_key>     <quotedbl> : "»"
