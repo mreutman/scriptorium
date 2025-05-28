@@ -149,7 +149,7 @@
 149x
 150x
 
-todo: dòceo, hoc? cìto->cìte, pulcher->pulcer
+todo: hoc? cìto->cìte
 increpāre: increpuī->increpāvī
 cōnstituō perfect?
 hîc?
