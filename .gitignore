@@ -1,0 +1,5 @@
+# xetex output
+*.aux
+*.log
+*.pdf
+out.tex

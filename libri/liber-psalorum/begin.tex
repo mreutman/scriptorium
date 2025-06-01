@@ -1,0 +1,332 @@
+\documentclass[twoside,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{ifthen}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{needspace}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\usepackage[
+  papersize={8.5in,11in},
+  layout=letterpaper,
+  right=0.8in,
+  left=0.8in,
+  top=1.2in,
+  bottom=1.2in,
+]{geometry}
+
+\setmainfont[
+  Path = ./../litterae/charis-sil/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont= *-BoldItalic,
+]{CharisSIL}
+
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\RaggedRightParindent}{\parindent}
+\setlength{\columnsep}{\parindent}
+
+\newcommand{\psalmKathismaStasis}[2] {
+  \markboth
+    {\hfill \addfontfeature{LetterSpace=10.0} DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=10.0} DIVISIO #1,#2 \hfill}
+
+  \ifthenelse{\equal{1}{#2}}
+  {
+    \needspace{15\baselineskip}
+    \bigskip
+    \begin{center}
+    {\bfseries\large †}
+    \end{center}
+  }
+  {
+    \needspace{7\baselineskip}
+    \begin{center}
+    \rule{5em}{0.4pt}
+    \end{center}
+  }
+
+  \begin{center}
+  {
+    \addfontfeature{LetterSpace=20.0}
+    {\bfseries\large\fontdimen2\font=1.2em DIVISIO #1,#2}
+  }
+  \end{center}
+
+  \ifthenelse{\equal{1}{#2}}
+  {
+    \begin{flushleft}
+    \noindent\hangindent=2em\hangafter=1
+    %\AlegreyaSC\fontdimen2\font=0.3em
+    {%
+      {Glória tìbi, Domine, glória tìbi}
+
+      \smallskip
+
+      {Rex caĕlèstis, Consolátor, Spíritus veritátis, qŭi èxtas ubíque et òmnia ìmples, Tesáŭrus beneficiórum et Largítor vitaĕ: Vèni et mane in nobîs, atque de òmni immundìtia mùnda nos, et salvas fac ánimas nostras, Benìgne.}
+
+      \smallskip
+
+      {Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nobîs. \hspace{\parindent} \textit{\small ( rep. 3 )}}
+
+      \smallskip
+
+      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáĕcula saĕculórum. Amen.}
+
+      \smallskip
+
+      {Sanctissima Trínitas, miserére nobîs. Dominátor, dele peccáta nostra. Domine, ignósce iniqŭitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.}
+
+      \smallskip
+
+      {Domine, miserére. \hspace{\parindent} \textit{\small ( rep. 3 )}}
+
+      \smallskip
+
+      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáĕcula saĕculórum. Amen.}
+
+      \smallskip
+
+      {Pater noster, qŭi es in caĕlîs, sanctificétur nomen tuum. Advéniat regnum tuum; fiat volùntas tua, sicut in caĕlo et in terra. Panem nostrum supersubstantiálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in tentatiónem, sed líbera nos a Malo. Amen.}
+
+      \smallskip
+
+      {Per oratiónes sanctórum patrum, Domine Jesu Christe Fili Dei, miserére nobîs.}
+
+      \smallskip
+
+      {Dòmine, miserére. \hspace{\parindent} \textit{\small ( rep. 40 )}}
+    }
+    \end{flushleft}
+  }
+  {
+    {\noindent Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáĕcula saĕculórum. Amen.}
+  }
+
+  \ifthenelse{\equal{1}{#2}}
+  {
+    \begin{center}
+    {\bfseries\large †}
+    \end{center}
+  }
+  {
+    \begin{center}
+    \rule{5em}{0.4pt}
+    \end{center}
+    \smallskip
+  }
+}
+
+\newcommand{\psalmChapter}[1] {%
+  \smallskip
+  \needspace{3\baselineskip}
+  \begin{flushleft}
+  {
+    \addfontfeature{LetterSpace=10.0}
+    {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
+  }
+  \end{flushleft}
+}
+
+\newcommand{\psalmChapterWithInscription}[2] {%
+  \smallskip
+  \needspace{4\baselineskip}
+  \begin{flushleft}
+  {%\Alegreya\addfontfeature{LetterSpace=20.0}
+    \uppercase{
+      {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
+    }
+  }
+
+  {
+    {
+      {\itshape\small\fontdimen2\font=0.5em #2}
+    }
+  }
+  \end{flushleft}
+}
+
+\newcommand{\psalmVerseNumber}[1] {%
+  {\raisebox{0.6ex}{\noindent{\footnotesize #1.}}}
+}
+
+\newcommand{\psalmVerse}[2] {%
+  \begin{flushleft}
+  \noindent\hangindent=4em\hangafter=1
+  {
+      {\psalmVerseNumber{#1} {#2}}
+  }
+  \end{flushleft}
+}
+
+\begin{document}
+
+\pagestyle{empty}
+{
+  \begin{center}
+
+  \vspace*{15em}
+
+  {\bfseries\Huge\fontdimen2\font=1em \uppercase{lìber psalmórum}}
+
+  \vspace*{5em}
+
+  {\bfseries\Large\fontdimen2\font=1em \uppercase{secùndum usum graĕcum}}
+
+  \vfill
+
+  \end{center}
+}
+
+\newpage
+
+{
+
+\vspace*{5em}
+
+\noindent This is a free and unencumbered work released into the public domain.
+
+\medskip
+
+\noindent Anyone is free to copy, modify, publish, use, sell, or distribute this work, either in print or digital form, for any purpose, commercial or non-commercial, and by any means.
+
+\medskip
+
+\noindent In jurisdictions that recognize copyright laws, the author or authors of this work dedicate any and all copyright interest in the work to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this document under copyright law.
+
+\medskip
+
+\noindent THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
+
+\bigskip
+
+\noindent For more information, visit: {\addfontfeature{LetterSpace=8.0}\bfseries www.sanctuscassianus.com}.
+
+\vfill
+
+}
+
+\newpage
+\pagestyle{myheadings}
+\setcounter{page}{1}
+
+{
+  {
+    \begin{center}
+    {Divísio Psalmórum}
+    \end{center}
+  }
+
+  {
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{|cccc|}
+    \hline
+    \multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Major}}} & \multicolumn{3}{c|}{\textbf{Minor}}   \\ \cline{2-4}
+    \multicolumn{1}{|c|}{}   & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{\textbf{2}} & \multicolumn{1}{c|}{\textbf{3}} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{1}}  & \multicolumn{1}{l|}{1-3} & \multicolumn{1}{l|}{4-6} & \multicolumn{1}{l|}{7-8} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{2}}  & \multicolumn{1}{l|}{9-10} & \multicolumn{1}{l|}{11-13} & \multicolumn{1}{l|}{14-16} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{3}}  & \multicolumn{1}{l|}{17} & \multicolumn{1}{l|}{18-20} & \multicolumn{1}{l|}{21-23} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{4}}  & \multicolumn{1}{l|}{24-26} & \multicolumn{1}{l|}{27-29} & \multicolumn{1}{l|}{30-31} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{5}}  & \multicolumn{1}{l|}{32-33} & \multicolumn{1}{l|}{34-35} & \multicolumn{1}{l|}{36} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{6}}  & \multicolumn{1}{l|}{37-39} & \multicolumn{1}{l|}{40-42} & \multicolumn{1}{l|}{43-45} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{7}}  & \multicolumn{1}{l|}{46-48} & \multicolumn{1}{l|}{49-50} & \multicolumn{1}{l|}{51-54} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{8}}  & \multicolumn{1}{l|}{55-57} & \multicolumn{1}{l|}{58-60} & \multicolumn{1}{l|}{61-63} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{9}}  & \multicolumn{1}{l|}{64-66} & \multicolumn{1}{l|}{67} & \multicolumn{1}{l|}{68-69} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{10}} & \multicolumn{1}{l|}{70-71} & \multicolumn{1}{l|}{72-73} & \multicolumn{1}{l|}{74-76} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{11}} & \multicolumn{1}{l|}{77} & \multicolumn{1}{l|}{78-80} & \multicolumn{1}{l|}{81-84} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{12}} & \multicolumn{1}{l|}{85-87} & \multicolumn{1}{l|}{88} & \multicolumn{1}{l|}{89-90} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{13}} & \multicolumn{1}{l|}{91-93} & \multicolumn{1}{l|}{94-96} & \multicolumn{1}{l|}{97-100} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{14}} & \multicolumn{1}{l|}{101-102} & \multicolumn{1}{l|}{103} & \multicolumn{1}{l|}{104} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{15}} & \multicolumn{1}{l|}{105} & \multicolumn{1}{l|}{106} & \multicolumn{1}{l|}{107-108} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{16}} & \multicolumn{1}{l|}{109-111} & \multicolumn{1}{l|}{112-114} & \multicolumn{1}{l|}{115-117} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{17}} & \multicolumn{1}{l|}{118:1-72} & \multicolumn{1}{l|}{118:73-131} & \multicolumn{1}{l|}{118:132-176} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{18}} & \multicolumn{1}{l|}{119-123} & \multicolumn{1}{l|}{124-128} & \multicolumn{1}{l|}{129-133} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{19}} & \multicolumn{1}{l|}{134-136} & \multicolumn{1}{l|}{137-139} & \multicolumn{1}{l|}{140-142} \\ \hline
+    \multicolumn{1}{|c|}{\textbf{20}} & \multicolumn{1}{l|}{143-144} & \multicolumn{1}{l|}{145-147} & \multicolumn{1}{l|}{148-150} \\ \hline
+    \end{tabular}
+    \end{table}
+  }
+}
+
+\newpage
+
+\vspace*{0.75em}
+
+{
+  \begin{center}
+  \rule{5em}{0.4pt}
+  \end{center}
+}
+
+{
+  \begin{center}
+  Sìmbolum Fidéi
+  \end{center}
+}
+
+{
+  \setlength\parindent{2em}
+
+  \bigskip
+
+  \noindent Credo in unum Deum, Patrem omnipotèntem,
+
+  factórem caĕli et terraĕ, visibìlium òmnium et invisibìlium.
+
+  \bigskip
+
+  \noindent Et in unum Dòminum Jesum Christum, Fílium Dei unigènitum,
+
+  et èx Patre natum ante òmnia sáĕcula;
+
+  Lumen de Lúmine, Deum verum de Deo vero,
+
+  gènitum non factum, consubstantiálem Patri, per qŭem òmnia facta sunt.
+
+  Qŭi pròpter nos hòmines et pròpter nostram salútem descèndit de caĕlîs,
+
+  et incarnátus est de Spíritu Sancto èx María Vìrgine, et hòmo factus est.
+
+  Crucifíxus étiam pro nobîs sùb Pòntio Piláto, passus et sepùltus est,
+
+  et resurréxit tèrtia die, secùndum scriptúras,
+
+  et ascèndit in caĕlum, sèdet ad dèxteram Patris.
+
+  Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
+
+  \bigskip
+
+  \noindent Et in Spíritum Sanctum, Dòminum et vivificántem, qŭi èx Patre procédit.
+
+  Qŭi cum Patre et Fílio sìmul adorátur et conglorificátur; qŭi locútus est per profétas.
+
+  \bigskip
+
+  \noindent Et unam, sanctam, católicam, et apostólicam Ecclésiam.
+
+  Confìteor unum baptìsma in remissiónem peccatórum.
+
+  Et exspècto resurrectiónem mortuórum, et vitam ventúri sáĕculi.
+
+  \bigskip
+
+  \noindent Amen.
+
+  \bigskip
+}
+
+{
+  \begin{center}
+  \rule{5em}{0.4pt}
+  \end{center}
+}
+
+\newpage
+
+\begin{multicols}{2}
