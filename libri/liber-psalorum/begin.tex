@@ -1,4 +1,4 @@
-\documentclass[twoside,12pt]{article}
+\documentclass[twoside,11pt]{article}
 \usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{ifthen}
@@ -17,14 +17,23 @@
   bottom=1.2in,
 ]{geometry}
 
+%\setmainfont[
+  %Path = ./../litterae/charis-sil/,
+  %Extension = .ttf,
+  %UprightFont = *-Regular,
+  %BoldFont = *-Bold,
+  %ItalicFont = *-Italic,
+  %BoldItalicFont= *-BoldItalic,
+%]{CharisSIL}
+
 \setmainfont[
-  Path = ./../litterae/charis-sil/,
+  Path = ./../litterae/bitter/,
   Extension = .ttf,
   UprightFont = *-Regular,
   BoldFont = *-Bold,
   ItalicFont = *-Italic,
   BoldItalicFont= *-BoldItalic,
-]{CharisSIL}
+]{Bitter}
 
 \renewcommand{\baselinestretch}{1.1}
 \setlength{\RaggedRightParindent}{\parindent}
@@ -32,8 +41,8 @@
 
 \newcommand{\psalmKathismaStasis}[2] {
   \markboth
-    {\hfill \addfontfeature{LetterSpace=10.0} DIVISIO #1,#2 \hfill}
-    {\hfill \addfontfeature{LetterSpace=10.0} DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=10.0}\fontdimen2\font=0.8em DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=10.0}\fontdimen2\font=0.8em DIVISIO #1,#2 \hfill}
 
   \ifthenelse{\equal{1}{#2}}
   {
@@ -61,7 +70,7 @@
   {
     \begin{flushleft}
     \noindent\hangindent=2em\hangafter=1
-    %\AlegreyaSC\fontdimen2\font=0.3em
+    \fontdimen2\font=0.4em
     {%
       {Glória tìbi, Domine, glória tìbi}
 
@@ -158,7 +167,7 @@
   \begin{flushleft}
   \noindent\hangindent=4em\hangafter=1
   {
-      {\psalmVerseNumber{#1} {#2}}
+      {\psalmVerseNumber{#1} {\fontdimen2\font=0.4em #2}}
   }
   \end{flushleft}
 }
@@ -186,7 +195,7 @@
 
 {
 
-\vspace*{5em}
+\vspace*{5em}\fontdimen2\font=0.3em
 
 \noindent This is a free and unencumbered work released into the public domain.
 
@@ -204,7 +213,7 @@
 
 \bigskip
 
-\noindent For more information, visit: {\addfontfeature{LetterSpace=8.0}\bfseries www.sanctuscassianus.com}.
+\noindent For more information, visit: \hspace{\parindent} {\addfontfeature{LetterSpace=8.0}\bfseries www.sanctuscassianus.com}.
 
 \vfill
 
@@ -217,7 +226,8 @@
 {
   {
     \begin{center}
-    {Divísio Psalmórum}
+    \addfontfeature{LetterSpace=10.0}
+    {\bfseries\fontdimen2\font=0.8em DIVÍSIO PSALMÓRUM}
     \end{center}
   }
 
@@ -265,12 +275,13 @@
 
 {
   \begin{center}
-  Sìmbolum Fidéi
+  \addfontfeature{LetterSpace=10.0}
+  {\bfseries\fontdimen2\font=0.8em SÌMBOLUM FIDÉI}
   \end{center}
 }
 
 {
-  \setlength\parindent{2em}
+  \setlength\parindent{2em}\fontdimen2\font=0.4em
 
   \bigskip
 
@@ -282,7 +293,7 @@
 
   \noindent Et in unum Dòminum Jesum Christum, Fílium Dei unigènitum,
 
-  et èx Patre natum ante òmnia sáĕcula;
+  et ex Patre natum ante òmnia sáĕcula;
 
   Lumen de Lúmine, Deum verum de Deo vero,
 
@@ -290,21 +301,25 @@
 
   Qŭi pròpter nos hòmines et pròpter nostram salútem descèndit de caĕlîs,
 
-  et incarnátus est de Spíritu Sancto èx María Vìrgine, et hòmo factus est.
+  et incarnátus est de Spíritu Sancto ex María Vìrgine, et hòmo factus est.
 
-  Crucifíxus étiam pro nobîs sùb Pòntio Piláto, passus et sepùltus est,
+  Crucifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
 
   et resurréxit tèrtia die, secùndum scriptúras,
 
   et ascèndit in caĕlum, sèdet ad dèxteram Patris.
 
-  Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
+  Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
+
+  cujus regni non èrit finis.
 
   \bigskip
 
-  \noindent Et in Spíritum Sanctum, Dòminum et vivificántem, qŭi èx Patre procédit.
+  \noindent Et in Spíritum Sanctum, Dòminum et vivificántem, qŭi ex Patre procédit.
 
-  Qŭi cum Patre et Fílio sìmul adorátur et conglorificátur; qŭi locútus est per profétas.
+  Qŭi cum Patre et Fílio sìmul adorátur et conglorificátur,
+
+  qŭi locútus est per profétas.
 
   \bigskip
 
