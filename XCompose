@@ -34,6 +34,8 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
 <Multi_key>     <z> : "ș"
 <Multi_key>     <Z> : "Ș"
+<Multi_key>     <s> : "š"
+<Multi_key>     <S> : "Š"
 <Multi_key>     <t> : "ț"
 <Multi_key>     <T> : "Ț"
 <Multi_key>     <c> : "č"
