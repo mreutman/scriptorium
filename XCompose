@@ -1,4 +1,5 @@
 include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
 <Multi_key>     <apostrophe> : "à"
 <Multi_key>     <quotedbl>   : "À"
 <Multi_key>     <less>       : "Ò"
@@ -35,7 +36,7 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key>     <g> : "ǧ"
 <Multi_key>     <G> : "Ǧ"
 
-<Multi_key>     <exclam> : "¡"
-<Multi_key>     <question> : "¿"
+<Multi_key>     <exclam>     : "¡"
+<Multi_key>     <question>   : "¿"
 <Multi_key>     <apostrophe> : "«"
-<Multi_key>     <quotedbl> : "»"
+<Multi_key>     <quotedbl>   : "»"
