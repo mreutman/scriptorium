@@ -33,4 +33,10 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <Multi_key>     <k>         : "û"
 <Multi_key>     <x>         : "î"
 
-<Multi_key>     <c> : "ĸ"
+<Multi_key>     <c> : "ç"
+<Multi_key>     <C> : "Ç"
+<Multi_key>     <s> : "ş"
+<Multi_key>     <S> : "Ş"
+<Multi_key>     <h> : "ċ"
+<Multi_key>     <H> : "Ċ"
+
