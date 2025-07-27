@@ -309,7 +309,7 @@ stasis[150] =  3
 class Psalms:
   __dir_psalms = "./../../psalmi/"
   __file_antifons = "antifonae.csv"
-  __file_inscriptions = "inscriptiones.csv"
+  __file_inscriptions = "inscriptiones-la.csv"
   __file_divisions = "kathisma-stasis.csv"
 
   __antifons_la = {}
@@ -328,29 +328,23 @@ class Psalms:
     line_count = 1
 
     while line:
-      # key ^ latin line ^ english line
-      # -- OR --
-      # latin line ^ english line
       s = line.split('^')
       if (2 == len(s)):
-        key = str(line_count)
-        line_la = s[0].strip()
-        line_en = s[1].strip()
-      elif (3 == len(s)):
         key = s[0].strip()
         line_la = s[1].strip()
-        line_en = s[2].strip()
+      else:
+        raise ValueError("Invalid CSV")
 
       la[key] = line_la
-      en[key] = line_en
+      en[key] = "" # TODO
       line = f.readline()
       line_count = line_count + 1
 
   def __init__(self):
-    self.__read_csv( \
-      self.__dir_psalms  + self.__file_antifons, \
-      self.__antifons_la, \
-      self.__antifons_en)
+    #self.__read_csv( \
+    #  self.__dir_psalms  + self.__file_antifons, \
+    #  self.__antifons_la, \
+    #  self.__antifons_en)
     self.__read_csv( \
       self.__dir_psalms  + self.__file_inscriptions, \
       self.__inscriptions_la, \
@@ -360,7 +354,7 @@ class Psalms:
       chapter = str(n)
       la = {}
       en = {}
-      self.__read_csv(self.__dir_psalms + chapter.zfill(3) + ".csv", la, en)
+      self.__read_csv(self.__dir_psalms + chapter.zfill(3) + "-la.csv", la, en)
       self.__la.append(la)
       self.__en.append(en)
 
