@@ -1,4 +1,4 @@
-\documentclass[twoside,11pt]{article}
+\documentclass[twoside,10pt]{article}
 \usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{ifthen}
@@ -18,22 +18,31 @@
 ]{geometry}
 
 %\setmainfont[
-  %Path = ./../litterae/charis-sil/,
+  %Path = ./../litterae/aleo/static/,
   %Extension = .ttf,
   %UprightFont = *-Regular,
   %BoldFont = *-Bold,
   %ItalicFont = *-Italic,
   %BoldItalicFont= *-BoldItalic,
-%]{CharisSIL}
+%]{Aleo}
 
 \setmainfont[
-  Path = ./../litterae/bitter/,
+  Path = ./../litterae/roboto-slab/static/,
   Extension = .ttf,
   UprightFont = *-Regular,
   BoldFont = *-Bold,
-  ItalicFont = *-Italic,
-  BoldItalicFont= *-BoldItalic,
-]{Bitter}
+  ItalicFont = *-Light,
+  BoldItalicFont= *-Black,
+]{RobotoSlab}
+
+%\setmainfont[
+  %Path = ./../litterae/bitter/,
+  %Extension = .ttf,
+  %UprightFont = *-Regular,
+  %BoldFont = *-Bold,
+  %ItalicFont = *-Italic,
+  %BoldItalicFont= *-BoldItalic,
+%]{Bitter}
 
 \renewcommand{\baselinestretch}{1.1}
 \setlength{\RaggedRightParindent}{\parindent}
@@ -41,8 +50,8 @@
 
 \newcommand{\psalmKathismaStasis}[2] {
   \markboth
-    {\hfill \addfontfeature{LetterSpace=10.0}\fontdimen2\font=0.8em DIVISIO #1,#2 \hfill}
-    {\hfill \addfontfeature{LetterSpace=10.0}\fontdimen2\font=0.8em DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em DIVISIO #1,#2 \hfill}
 
   \ifthenelse{\equal{1}{#2}}
   {
@@ -62,7 +71,7 @@
   \begin{center}
   {
     \addfontfeature{LetterSpace=20.0}
-    {\bfseries\large\fontdimen2\font=1.2em DIVISIO #1,#2}
+    {\bfseries\itshape\large\fontdimen2\font=1.2em DIVISIO #1,#2}
   }
   \end{center}
 
@@ -72,11 +81,11 @@
     \noindent\hangindent=2em\hangafter=1
     \fontdimen2\font=0.4em
     {%
-      {Glória tìbi, Domine, glória tìbi}
+      {Glória tìbi, Domine, glória tìbi.}
 
       \medskip
 
-      {Rex caĕlèstis, Consolátor, Spíritus veritátis, qŭi èxtas ubíqŭe et òmnia ìmples, Tesáŭrus beneficiórum et Largítor vitaĕ: Vèni et mane in nobîs, atque de òmni immundìția mùnda nos, et salvas fac ánimas nostras, Benìgne.}
+      {Rex çaelèstis, Consolátor, Spíritus veritátis, qui èxtas ubíque et òmnia ìmples, Thesáurus benefiçiórum et Larğítor vitae: Vèni et màne in nobîs, àtque de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.}
 
       \medskip
 
@@ -84,11 +93,11 @@
 
       \medskip
 
-      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáĕcula saĕculórum. Amen.}
+      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
 
       \medskip
 
-      {Sanctissima Trínitas, miserére nobîs. Dominátor, dele peccáta nostra. Domine, ignósce iniqŭitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.}
+      {Sanctìssima Trínitas, miserére nobîs. Dominátor, dele peccáta nostra. Domine, ignósce iniquitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.}
 
       \medskip
 
@@ -96,15 +105,16 @@
 
       \medskip
 
-      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáĕcula saĕculórum. Amen.}
+      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
 
       \medskip
 
-      {Pater noster, qŭi es in caĕlîs, sanctificétur nomen tuum. Advéniat regnum tuum; fiat volùntas tua, sicut in caĕlo et in terra. Panem nostrum supersubstanțiálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in tentațiónem, sed líbera nos a Malo. Amen.}
+      \needspace{7\baselineskip}
+      {Pàter noster, qui es in çaelîs, sanctificétur nomen tuum. Advéniat regnum tuum; fiat volùntas tua, sicut in çaelo et in terra. Panem nostrum supersubstanziálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in temptaziónem, sed líbera nos a Màlo. Amen.}
 
       \medskip
 
-      {Per orațiónes sanctórum patrum, Domine Jesu Christe Fili Dei, miserére nobîs.}
+      {Per oraziónes sanctórum patrum, Dòmine Jesu Chríste Fili Dei, miserére nobîs.}
 
       \medskip
 
@@ -113,7 +123,7 @@
     \end{flushleft}
   }
   {
-    {\noindent Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáĕcula saĕculórum. Amen.}
+    {\noindent Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
   }
 
   \ifthenelse{\equal{1}{#2}}
@@ -135,7 +145,7 @@
   \needspace{3\baselineskip}
   \begin{flushleft}
   {
-    \addfontfeature{LetterSpace=10.0}
+    \addfontfeature{LetterSpace=13.3}
     {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
   }
   \end{flushleft}
@@ -145,29 +155,27 @@
   \smallskip
   \needspace{4\baselineskip}
   \begin{flushleft}
-  {%\Alegreya\addfontfeature{LetterSpace=20.0}
-    \uppercase{
-      {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
-    }
+  {%
+    \addfontfeature{LetterSpace=13.3}
+    {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
   }
 
-  {
-    {
-      {\itshape\small\fontdimen2\font=0.5em #2}
-    }
+  {%
+    \addfontfeature{LetterSpace=3.0}
+    {\itshape\footnotesize\fontdimen2\font=0.3em #2}
   }
   \end{flushleft}
 }
 
 \newcommand{\psalmVerseNumber}[1] {%
-  {\raisebox{0.6ex}{\noindent{\footnotesize #1.}}}
+  {\raisebox{0.6ex}{\noindent{\itshape\scriptsize #1.}}}
 }
 
 \newcommand{\psalmVerse}[2] {%
   \begin{flushleft}
   \noindent\hangindent=4em\hangafter=1
   {
-      {\psalmVerseNumber{#1} {\fontdimen2\font=0.4em #2}}
+      {\psalmVerseNumber{#1} {#2}}
   }
   \end{flushleft}
 }
@@ -180,11 +188,12 @@
 
   \vspace*{15em}
 
-  {\bfseries\Huge\fontdimen2\font=1em \uppercase{lìber psalmórum}}
+  \addfontfeature{LetterSpace=15.0}
+  {\bfseries\itshape\Huge\fontdimen2\font=1.2em \uppercase{lìber psalmórum}}
 
   \vspace*{5em}
 
-  {\bfseries\Large\fontdimen2\font=1em \uppercase{secùndum usum graĕcum}}
+  {\bfseries\itshape\Large\fontdimen2\font=1.2em \uppercase{secùndum usum graecum}}
 
   \vfill
 
@@ -265,7 +274,7 @@
 
 \newpage
 
-\vspace*{0.75em}
+\vspace*{0.60em}
 
 {
   \begin{center}
@@ -274,10 +283,12 @@
 }
 
 {
+  \medskip
   \begin{center}
-  \addfontfeature{LetterSpace=10.0}
-  {\bfseries\fontdimen2\font=0.8em SÌMBOLUM FIDÉI}
+  \addfontfeature{LetterSpace=20.0}
+  {\bfseries\itshape\large\fontdimen2\font=1.2em SÌMBOLUM FIDÉI}
   \end{center}
+  \medskip
 }
 
 {
@@ -285,29 +296,29 @@
 
   \bigskip
 
-  \noindent Credo in unum Deum, Patrem omnipotèntem,
+  \noindent Credo in unum Deum, Pàtrem omnipotèntem,
 
-  factórem caĕli et terraĕ, visibìlium òmnium et invisibìlium.
+  factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
 
   \bigskip
 
-  \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum,
+  \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum,
 
-  et ex Patre natum ante òmnia sáĕcula;
+  et ex Patre natum ante òmnia sáecula;
 
   Lumen de Lúmine, Deum verum de Deo vero,
 
-  ǧènitum non factum, consubstanțiálem Patri, per qŭem òmnia facta sunt.
+  ğènitum non factum, consubstanziálem Patri, per quem òmnia facta sunt.
 
-  Qŭi pròpter nos hòmines et pròpter nostram salútem descèndit de caĕlîs,
+  Qui pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs,
 
-  et incarnátus est de Spíritu Sancto ex María Vìrgine, et hòmo factus est.
+  et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est.
 
-  Crucifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
+  Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
 
-  et resurréxit tèrtia die, secùndum scriptúras,
+  et resurréxit tèrzia die, secùndum scriptúras,
 
-  et ascèndit in caĕlum, sèdet ad dèxteram Patris.
+  et asçèndit in çaelum, sèdet ad dèxteram Patris.
 
   Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
 
@@ -315,11 +326,11 @@
 
   \bigskip
 
-  \noindent Et in Spíritum Sanctum, Dòminum et vivificántem, qŭi ex Patre procédit.
+  \noindent Et in Spíritum Sanctum, Dòminum et vivificàntem, qui ex Patre proçédit.
 
-  Qŭi cum Patre et Fílio sìmul adorátur et conglorificátur,
+  Qui cum Patre et Fílio sìmul adorátur et conglorificátur,
 
-  qŭi locútus est per profétas.
+  qui locútus est per profétas.
 
   \bigskip
 
@@ -327,7 +338,7 @@
 
   Confìteor unum baptìsma in remissiónem peccatórum.
 
-  Et exspècto resurrecțiónem mortuórum, et vitam ventúri sáĕculi.
+  Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
 
   \bigskip
 
