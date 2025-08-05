@@ -1,4 +1,4 @@
-\documentclass[twoside,11pt]{article}
+\documentclass[twoside,10pt]{article}
 \usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{ifthen}
@@ -18,22 +18,31 @@
 ]{geometry}
 
 %\setmainfont[
-  %Path = ./../litterae/charis-sil/,
+  %Path = ./../litterae/aleo/static/,
   %Extension = .ttf,
   %UprightFont = *-Regular,
   %BoldFont = *-Bold,
   %ItalicFont = *-Italic,
   %BoldItalicFont= *-BoldItalic,
-%]{CharisSIL}
+%]{Aleo}
 
 \setmainfont[
-  Path = ./../litterae/bitter/,
+  Path = ./../litterae/roboto-slab/static/,
   Extension = .ttf,
   UprightFont = *-Regular,
   BoldFont = *-Bold,
-  ItalicFont = *-Italic,
-  BoldItalicFont= *-BoldItalic,
-]{Bitter}
+  ItalicFont = *-Light,
+  BoldItalicFont= *-Black,
+]{RobotoSlab}
+
+%\setmainfont[
+  %Path = ./../litterae/bitter/,
+  %Extension = .ttf,
+  %UprightFont = *-Regular,
+  %BoldFont = *-Bold,
+  %ItalicFont = *-Italic,
+  %BoldItalicFont= *-BoldItalic,
+%]{Bitter}
 
 \renewcommand{\baselinestretch}{1.1}
 \setlength{\RaggedRightParindent}{\parindent}
@@ -62,7 +71,7 @@
   \begin{center}
   {
     \addfontfeature{LetterSpace=20.0}
-    {\bfseries\large\fontdimen2\font=1.2em DIVISIO #1,#2}
+    {\bfseries\itshape\large\fontdimen2\font=1.2em DIVISIO #1,#2}
   }
   \end{center}
 
@@ -76,7 +85,7 @@
 
       \medskip
 
-      {Rex çaelèstis, Consolátor, Spíritus veritátis, qui èxtas ubíque et òmnia ìmples, Tesáurus benefiçiórum et Larğítor vitae: Vèni et màne in nobîs, àtque de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.}
+      {Rex çaelèstis, Consolátor, Spíritus veritátis, qui èxtas ubíque et òmnia ìmples, Thesáurus benefiçiórum et Larğítor vitae: Vèni et màne in nobîs, àtque de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.}
 
       \medskip
 
@@ -104,7 +113,7 @@
 
       \medskip
 
-      {Per oraziónes sanctórum patrum, Dòmine Jesu Chrìste Fili Dei, miserére nobîs.}
+      {Per oraziónes sanctórum patrum, Dòmine Jesu Chríste Fili Dei, miserére nobîs.}
 
       \medskip
 
@@ -135,7 +144,7 @@
   \needspace{3\baselineskip}
   \begin{flushleft}
   {
-    \addfontfeature{LetterSpace=10.0}
+    \addfontfeature{LetterSpace=13.3}
     {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
   }
   \end{flushleft}
@@ -145,29 +154,27 @@
   \smallskip
   \needspace{4\baselineskip}
   \begin{flushleft}
-  {%\Alegreya\addfontfeature{LetterSpace=20.0}
-    \uppercase{
-      {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
-    }
+  {
+    \addfontfeature{LetterSpace=13.3}
+    {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
   }
 
   {
-    {
-      {\itshape\small\fontdimen2\font=0.5em #2}
-    }
+    \addfontfeature{LetterSpace=3.0}
+    {\itshape\small\fontdimen2\font=0.3em #2}
   }
   \end{flushleft}
 }
 
 \newcommand{\psalmVerseNumber}[1] {%
-  {\raisebox{0.6ex}{\noindent{\scriptsize #1.}}}
+  {\raisebox{0.6ex}{\noindent{\itshape\scriptsize #1.}}}
 }
 
 \newcommand{\psalmVerse}[2] {%
   \begin{flushleft}
   \noindent\hangindent=4em\hangafter=1
   {
-      {\psalmVerseNumber{#1} {\fontdimen2\font=0.4em #2}}
+      {\psalmVerseNumber{#1} {#2}}
   }
   \end{flushleft}
 }
@@ -180,11 +187,12 @@
 
   \vspace*{15em}
 
-  {\bfseries\Huge\fontdimen2\font=1em \uppercase{lìber psalmórum}}
+  \addfontfeature{LetterSpace=15.0}
+  {\bfseries\itshape\Huge\fontdimen2\font=1.2em \uppercase{lìber psalmórum}}
 
   \vspace*{5em}
 
-  {\bfseries\Large\fontdimen2\font=1em \uppercase{secùndum usum graecum}}
+  {\bfseries\itshape\Large\fontdimen2\font=1.2em \uppercase{secùndum usum graecum}}
 
   \vfill
 
@@ -265,7 +273,7 @@
 
 \newpage
 
-\vspace*{0.75em}
+\vspace*{0.60em}
 
 {
   \begin{center}
@@ -274,10 +282,12 @@
 }
 
 {
+  \medskip
   \begin{center}
-  \addfontfeature{LetterSpace=10.0}
-  {\bfseries\fontdimen2\font=0.8em SÌMBOLUM FIDÉI}
+  \addfontfeature{LetterSpace=20.0}
+  {\bfseries\itshape\large\fontdimen2\font=1.2em SÌMBOLUM FIDÉI}
   \end{center}
+  \medskip
 }
 
 {
