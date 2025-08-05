@@ -50,8 +50,8 @@
 
 \newcommand{\psalmKathismaStasis}[2] {
   \markboth
-    {\hfill \addfontfeature{LetterSpace=10.0}\fontdimen2\font=0.8em DIVISIO #1,#2 \hfill}
-    {\hfill \addfontfeature{LetterSpace=10.0}\fontdimen2\font=0.8em DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em DIVISIO #1,#2 \hfill}
+    {\hfill \addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em DIVISIO #1,#2 \hfill}
 
   \ifthenelse{\equal{1}{#2}}
   {
@@ -109,6 +109,7 @@
 
       \medskip
 
+      \needspace{7\baselineskip}
       {Pàter noster, qui es in çaelîs, sanctificétur nomen tuum. Advéniat regnum tuum; fiat volùntas tua, sicut in çaelo et in terra. Panem nostrum supersubstanziálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in temptaziónem, sed líbera nos a Màlo. Amen.}
 
       \medskip
@@ -154,14 +155,14 @@
   \smallskip
   \needspace{4\baselineskip}
   \begin{flushleft}
-  {
+  {%
     \addfontfeature{LetterSpace=13.3}
     {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
   }
 
-  {
+  {%
     \addfontfeature{LetterSpace=3.0}
-    {\itshape\small\fontdimen2\font=0.3em #2}
+    {\itshape\footnotesize\fontdimen2\font=0.3em #2}
   }
   \end{flushleft}
 }
