@@ -35,10 +35,7 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
 <Multi_key>     <c> : "ç"
 <Multi_key>     <C> : "Ç"
-<Multi_key>     <g> : "ģ"
-<Multi_key>     <G> : "Ģ"
+<Multi_key>     <g> : "ğ"
+<Multi_key>     <G> : "Ğ"
 <Multi_key>     <d> : "ð"
 <Multi_key>     <D> : "Ð"
-<Multi_key>     <t> : "ț"
-<Multi_key>     <T> : "Ț"
-
