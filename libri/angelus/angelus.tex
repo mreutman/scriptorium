@@ -1,0 +1,133 @@
+\documentclass[twoside,10pt]{article}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{ifthen}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{needspace}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\usepackage[
+  papersize={8.5in,11in},
+  layout=letterpaper,
+  right=0.8in,
+  left=0.8in,
+  top=1.2in,
+  bottom=1.2in,
+]{geometry}
+
+\setmainfont[
+  Path = ./../litterae/roboto-slab/static/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Light,
+  BoldItalicFont= *-Black,
+]{RobotoSlab}
+
+\newfontfamily{\liturgy}[
+  Path = ./../litterae/liturgy/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+]{Liturgy}
+
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\RaggedRightParindent}{\parindent}
+\setlength{\columnsep}{\parindent}
+
+\begin{document}
+\pagestyle{empty}
+{
+  \medskip
+  \begin{center}
+  \addfontfeature{LetterSpace=20.0}
+  {\bfseries\itshape\large\fontdimen2\font=1.2em \uppercase{anğelus}}
+  \end{center}
+  \medskip
+}
+
+{
+  \setlength\parindent{2em}\fontdimen2\font=0.4em
+
+  \bigskip
+
+  \noindent {\liturgy\small V.~~} Àngelus Dòmini nunziávit Maríae,
+
+  \smallskip
+
+  \noindent {\liturgy\small R.~~} et conçépit de Spíritu Sancto.
+
+  \bigskip
+
+  \noindent Ave María, grázia plena, Dòminus tecum;
+  
+  benedìcta tu in mulièribus, et benedìctus fructus vèntris tui, Jesus.
+
+  Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc in hora mortis nostrae.
+
+  Amen.
+
+  \bigskip
+
+  \noindent {\liturgy\small V.~~} Ecçe ançìlla Dòmini.
+
+  \smallskip
+
+  \noindent {\liturgy\small R.~~} Fiat mìhi sècundum vèrbum tuum.
+
+  \bigskip
+
+  \noindent Ave María, grázia plena, Dòminus tecum;
+  
+  benedìcta tu in mulièribus, et benedìctus fructus vèntris tui, Jesus.
+
+  Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc in hora mortis nostrae.
+
+  Amen.
+
+  \bigskip
+
+  \noindent {\liturgy\small V.~~} Et Vèrbum càro fàctum est,
+
+  \smallskip
+
+  \noindent {\liturgy\small R.~~} et habitávit in nobîs.
+
+  \bigskip
+
+  \noindent Ave María, grázia plena, Dòminus tecum;
+  
+  benedìcta tu in mulièribus, et benedìctus fructus vèntris tui, Jesus.
+
+  Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc in hora mortis nostrae.
+
+  Amen.
+
+  \bigskip
+
+  \noindent {\liturgy\small V.~~} Ora pro nobîs, sancta Dei Gènetrix,
+
+  \smallskip
+
+  \noindent {\liturgy\small R.~~} ut dìgni effiçiámur promissiónibus Christi.
+
+  \bigskip
+
+  \noindent {\liturgy\small V.~~} Orémus.
+
+  \bigskip
+
+  \noindent Gráziam tuam, quáesumus, Domine, mèntibus nostrîs infùnde;
+
+  ut qui, Àngelo nunziànte, Christi Fílii tui incarnaziónem cognóvimus,
+
+  per passiónem ejus et cruçem, ad resurrecziónis glóriam perducámur.
+
+  Per eùndem Christum Dòminum nostrum.
+
+  \bigskip
+
+  \noindent {\liturgy\small R.~~} Amen.
+}
+\end{document}
