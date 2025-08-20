@@ -398,7 +398,7 @@ if __name__=='__main__':
   ps = Psalms()
   f = open("out.tex", "w")
 
-  f.write(r"\input{begin}" + "\n\n")
+  f.write(r"\input{begin-royal}" + "\n\n")
 
   current_kathisma = 0
   current_stasis = 0

@@ -9,22 +9,13 @@
 \usepackage{titlesec}
 
 \usepackage[
-  papersize={8.5in,11in},
-  layout=letterpaper,
-  right=0.8in,
-  left=0.8in,
-  top=0.6in,
-  bottom=0.8in,
+  paperwidth=6.14in,
+  paperheight=9.21in,
+  right=0.5in,
+  left=0.5in,
+  top=0.7in,
+  bottom=0.4in,
 ]{geometry}
-
-%\usepackage[
-  %paperwidth=7in,
-  %paperheight=10in,
-  %right=0.6in,
-  %left=0.6in,
-  %top=0.7in,
-  %bottom=0.4in,
-%]{geometry}
 
 \setmainfont[
   Path = ./../litterae/roboto-slab/static/,
@@ -35,23 +26,29 @@
   BoldItalicFont= *-Black,
 ]{RobotoSlab}
 
-%\setmainfont[
-  %Path = ./../litterae/bitter/,
-  %Extension = .ttf,
-  %UprightFont = *-Regular,
-  %BoldFont = *-Bold,
-  %ItalicFont = *-Italic,
-  %BoldItalicFont= *-BoldItalic,
-%]{Bitter}
-
-\renewcommand{\baselinestretch}{1.1}
-\setlength{\RaggedRightParindent}{\parindent}
 \setlength{\columnsep}{\parindent}
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\thepage}{\textit{\small\arabic{page}}}
+
+\newcommand{\fmtBodyText}{\small}
+\newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
+\newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
+\newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.0}\footnotesize\itshape\fontdimen2\font=0.3em}
+\newcommand{\fmtRepeatText}{\itshape\footnotesize}
+\newcommand{\fmtSectionText}{\addfontfeature{LetterSpace=20.0}\bfseries\itshape\fontdimen2\font=1.2em}
+\newcommand{\fmtSectionTextHeader}{\addfontfeature{LetterSpace=20.0}\small\itshape\fontdimen2\font=1.2em}
+\newcommand{\fmtVerseText}{\itshape\scriptsize}
+
+\newcommand{\fmtHangIndent}{\noindent\hangindent=1em\hangafter=1}
+\newcommand{\fmtHangIndentVerse}{\noindent\hangindent=3em\hangafter=1}
+
+\newcommand{\dividerSection}{\rule{17.5em}{0.4pt}}
+\newcommand{\spaceRepeat}{\hspace{0.6em}}
 
 \newcommand{\psalmKathismaStasis}[2] {
   \markboth
-    {\hfill \addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em DIVISIO #1,#2 \hfill}
-    {\hfill \addfontfeature{LetterSpace=20.0}\fontdimen2\font=1.2em DIVISIO #1,#2 \hfill}
+    {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
+    {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
 
   \ifthenelse{\equal{1}{#2}}
   {
@@ -63,22 +60,19 @@
   {
     \needspace{14\baselineskip}
     \begin{center}
-    \rule{24em}{0.4pt}
+    \dividerSection
     \end{center}
   }
 
   \begin{center}
-  {
-    \addfontfeature{LetterSpace=20.0}
-    {\bfseries\itshape\large\fontdimen2\font=1.2em DIVISIO #1,#2}
-  }
+  {\fmtSectionText DIVISIO #1,#2}
   \end{center}
 
   \begin{flushleft}
-  \noindent\hangindent=2em\hangafter=1
-  \fontdimen2\font=0.4em
+  \fmtHangIndent
+  \fmtBodyTextSpaced
   \ifthenelse{\equal{1}{#2}}
-  {
+  {%
     {%
       {Glória tìbi, Domine, glória tìbi.}
 
@@ -88,7 +82,7 @@
 
       \medskip
 
-      {Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nobîs. \hspace{\parindent} \textit{\small ( rep. 3 )}}
+      {Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nobîs. \spaceRepeat {\fmtRepeatText ( rep. 3 )}}
 
       \medskip
 
@@ -100,7 +94,7 @@
 
       \medskip
 
-      {Domine, miserére. \hspace{\parindent} \textit{\small ( rep. 3 )}}
+      {Domine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 3 )}}
 
       \medskip
 
@@ -117,16 +111,14 @@
 
       \medskip
 
-      {Dòmine, miserére. \hspace{\parindent} \textit{\small ( rep. 40 )}}
+      {Dòmine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 40 )}}
       
       \medskip
     }
   }
   
   \needspace{7\baselineskip}
-  {%
-    Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
-  }
+  {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
   \end{flushleft}
 
   \ifthenelse{\equal{1}{#2}}
@@ -137,7 +129,7 @@
   }
   {
     \begin{center}
-    \rule{24em}{0.4pt}
+    \dividerSection
     \end{center}
   }
 }
@@ -145,39 +137,28 @@
 \newcommand{\psalmChapter}[1] {%
   \needspace{3\baselineskip}
   \begin{flushleft}
-  {
-    \addfontfeature{LetterSpace=13.3}
-    {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
-  }
+  {\fmtChapterText PSALMUS #1}
   \end{flushleft}
 }
 
 \newcommand{\psalmChapterWithInscription}[2] {%
-  \smallskip
   \needspace{4\baselineskip}
   \begin{flushleft}
-  {%
-    \addfontfeature{LetterSpace=13.3}
-    {\bfseries\fontdimen2\font=0.8em PSALMUS #1}
-  }
+  {\fmtChapterText PSALMUS #1}
 
-  {%
-    \addfontfeature{LetterSpace=3.0}
-    {\itshape\footnotesize\fontdimen2\font=0.3em #2}
-  }
+  {\fmtInscriptionText #2}
   \end{flushleft}
 }
 
 \newcommand{\psalmVerseNumber}[1] {%
-  {\raisebox{0.6ex}{\noindent{\itshape\scriptsize #1.}}}
+  {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.}}}
 }
 
 \newcommand{\psalmVerse}[2] {%
   \begin{flushleft}
-  \noindent\hangindent=4em\hangafter=1
-  {
-      {\psalmVerseNumber{#1} {#2}}
-  }
+  \fmtHangIndentVerse
+  \fmtBodyText
+  {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}} {#2}}
   \end{flushleft}
 }
 
@@ -205,7 +186,8 @@
 
 {
 
-\vspace*{5em}\fontdimen2\font=0.3em
+\vspace*{5em}
+\fmtBodyTextSpaced
 
 \noindent This is a free and unencumbered work released into the public domain.
 
@@ -237,8 +219,7 @@
   \vspace*{5em}
   {
     \begin{center}
-    \addfontfeature{LetterSpace=10.0}
-    {\bfseries\fontdimen2\font=0.8em DIVISIO PSALMORUM}
+    {\fmtSectionText DIVISIO PSALMORUM}
     \end{center}
   }
 
@@ -287,8 +268,7 @@
 {
   \medskip
   \begin{center}
-  \addfontfeature{LetterSpace=20.0}
-  {\bfseries\itshape\large\fontdimen2\font=1.2em \uppercase{symbolum fidei}}
+  {\fmtSectionText \uppercase{symbolum fidei}}
 
   \bigskip
 
@@ -299,7 +279,9 @@
 }
 
 {
-  \setlength\parindent{2em}\fontdimen2\font=0.4em
+  %\setlength\parindent{1em}\small\fontdimen2\font=0.3em
+  \fmtHangIndent
+  \fmtBodyTextSpaced
 
   \bigskip
 
@@ -356,11 +338,11 @@
 
 {
   \begin{center}
-  \rule{12em}{0.4pt}
+  \rule{12.5em}{0.4pt}
 
   \vspace*{5em}
 
-  {\bfseries\huge †} 
+  {\bfseries\LARGE †} 
   \end{center}
 }
 
