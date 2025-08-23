@@ -1,4 +1,5 @@
 \documentclass[twoside,10pt]{book}
+\usepackage[none]{hyphenat}
 \usepackage{fancyhdr}
 \usepackage{fontspec}
 \usepackage{ifthen}
@@ -13,8 +14,8 @@
   paperheight=9.21in,
   right=0.5in,
   left=0.5in,
-  top=0.7in,
-  bottom=0.4in,
+  top=0.85in,
+  bottom=0.50in,
 ]{geometry}
 
 \setmainfont[
@@ -26,17 +27,14 @@
   BoldItalicFont= *-Black,
 ]{RobotoSlab}
 
-\setlength{\columnsep}{\parindent}
-\renewcommand{\baselinestretch}{1.1}
-\renewcommand{\thepage}{\textit{\small\arabic{page}}}
-
 \newcommand{\fmtBodyText}{\small}
 \newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
 \newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.0}\footnotesize\itshape\fontdimen2\font=0.3em}
+\newcommand{\fmtPageNumberText}{\itshape\footnotesize}
 \newcommand{\fmtRepeatText}{\itshape\footnotesize}
 \newcommand{\fmtSectionText}{\addfontfeature{LetterSpace=20.0}\bfseries\itshape\fontdimen2\font=1.2em}
-\newcommand{\fmtSectionTextHeader}{\addfontfeature{LetterSpace=20.0}\small\itshape\fontdimen2\font=1.2em}
+\newcommand{\fmtSectionTextHeader}{\addfontfeature{LetterSpace=20.0}\footnotesize\itshape\fontdimen2\font=1.2em}
 \newcommand{\fmtVerseText}{\itshape\scriptsize}
 
 \newcommand{\fmtHangIndent}{\noindent\hangindent=1em\hangafter=1}
@@ -45,6 +43,18 @@
 \newcommand{\dividerSection}{\rule{17.5em}{0.4pt}}
 \newcommand{\spaceRepeat}{\hspace{0.6em}}
 
+\newenvironment{nscenter}
+ {\parskip=0pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+
+\newenvironment{nsflushleft}
+ {\parskip=0pt\par\nopagebreak\raggedright}
+ {\par\noindent\ignorespacesafterend}
+
+\setlength{\columnsep}{\parindent}
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\thepage}{\fmtPageNumberText\arabic{page}}
+
 \newcommand{\psalmKathismaStasis}[2] {
   \markboth
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
@@ -52,90 +62,110 @@
 
   \ifthenelse{\equal{1}{#2}}
   {
-    \needspace{15\baselineskip}
-    \begin{center}
-    {\bfseries †}
-    \end{center}
+    \needspace{14\baselineskip}
+    \begin{nscenter}
+    \dividerSection
+    \end{nscenter}
   }
   {
     \needspace{14\baselineskip}
-    \begin{center}
+    \begin{nscenter}
     \dividerSection
-    \end{center}
+    \end{nscenter}
   }
 
-  \begin{center}
-  {\fmtSectionText DIVISIO #1,#2}
-  \end{center}
+  \smallskip
 
-  \begin{flushleft}
-  \fmtHangIndent
-  \fmtBodyTextSpaced
+  \begin{nscenter}
+  {\fmtSectionText DIVISIO #1,#2}
+  \end{nscenter}
+
+  \medskip
+
   \ifthenelse{\equal{1}{#2}}
   {%
-    {%
-      {Glória tìbi, Domine, glória tìbi.}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Glória tìbi, Domine, glória tìbi.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Rex çaelèstis, Consolátor, Spíritus veritátis, qüi èxtas ubíqüe et òmnia ìmples, Thesáurus benefiçiórum et Larğítor vitae: Vèni et màne in nobîs, àtqüe de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Rex çaelèstis, Consolátor, Spíritus veritátis, qüi èxtas ubíqüe et òmnia ìmples, Thesáurus benefiçiórum et Larğítor vitae: Vèni et màne in nobîs, àtqüe de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nobîs. \spaceRepeat {\fmtRepeatText ( rep. 3 )}}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nostri. \spaceRepeat {\fmtRepeatText ( rep. 3 )}
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Sanctìssima Trínitas, miserére nobîs. Dominátor, dele peccáta nostra. Domine, ignósce iniqüitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Sanctìssima Trínitas, miserére nostri. Dominátor, dele peccáta nostra. Domine, ignósce iniqüitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Domine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 3 )}}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Domine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 3 )}
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      \needspace{7\baselineskip}
-      {Pàter noster, qüi es in çaelîs, sanctificétur nomen tuum. Advéniat regnum tuum; fiat volùntas tua, sicut in çaelo et in terra. Panem nostrum supersubstanziálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in temptaziónem, sed líbera nos a Màlo. Amen.}
+    \needspace{7\baselineskip}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Pàter noster, qüi es in çaelîs, sanctificétur nomen tuum. Advéniat regnum tuum; fiat volùntas tua, sicut in çaelo et in terra. Panem nostrum supersubstanziálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in temptaziónem, sed líbera nos a Màlo. Amen.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Per oraziónes sanctórum patrum, Dòmine Jesu Chríste Fili Dei, miserére nobîs.}
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Per oraziónes sanctórum patrum, Dòmine Jesu Chríste Fili Dei, miserére nostri.
+    \end{nsflushleft}
 
-      \medskip
+    \medskip
 
-      {Dòmine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 40 )}}
-      
-      \medskip
-    }
+    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
+    Dòmine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 40 )}
+    \end{nsflushleft}
+
+    \medskip
   }
   
   \needspace{7\baselineskip}
+  \begin{nsflushleft}\fmtHangIndent\fmtBodyText
   {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
-  \end{flushleft}
+  \end{nsflushleft}
 
   \ifthenelse{\equal{1}{#2}}
   {
-    \begin{center}
-    {\bfseries †}
-    \end{center}
+    \begin{nscenter}
+    \dividerSection
+    \end{nscenter}
   }
   {
-    \begin{center}
+    \begin{nscenter}
     \dividerSection
-    \end{center}
+    \end{nscenter}
   }
 }
 
 \newcommand{\psalmChapter}[1] {%
-  \needspace{3\baselineskip}
+  \needspace{5\baselineskip}
   \begin{flushleft}
   {\fmtChapterText PSALMUS #1}
   \end{flushleft}
@@ -150,16 +180,15 @@
   \end{flushleft}
 }
 
-\newcommand{\psalmVerseNumber}[1] {%
-  {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.}}}
-}
-
 \newcommand{\psalmVerse}[2] {%
-  \begin{flushleft}
+  \needspace{3\baselineskip}
+  \begin{nsflushleft}
   \fmtHangIndentVerse
   \fmtBodyText
   {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}} {#2}}
-  \end{flushleft}
+  \end{nsflushleft}
+
+  \medskip
 }
 
 \begin{document}
@@ -187,26 +216,30 @@
 {
 
 \vspace*{5em}
-\fmtBodyTextSpaced
 
+\noindent\makebox[\textwidth][c]{
+\fmtBodyTextSpaced
+\begin{minipage}{0.9\textwidth}
 \noindent This is a free and unencumbered work released into the public domain.
 
-\medskip
+\vspace{1em}
 
 \noindent Anyone is free to copy, modify, publish, use, sell, or distribute this work, either in print or digital form, for any purpose, commercial or non-commercial, and by any means.
 
-\medskip
+\vspace{1em}
 
-\noindent In jurisdictions that recognize copyright laws, the author or authors of this work dedicate any and all copyright interest in the work to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this document under copyright law.
+\noindent\tolerance 9000 In jurisdictions that recognize copyright laws, the author or authors of this work dedicate any and all copyright interest in the work to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this document under copyright law.
 
-\medskip
+\vspace{1em}
 
-\noindent THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
+\noindent\tolerance 9000 THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
 
-\bigskip
+\vspace{2em}
 
 \noindent For more information, visit: \hspace{\parindent} {\addfontfeature{LetterSpace=8.0}\bfseries www.sanctuscassianus.com}.
 
+\end{minipage}
+}
 \vfill
 
 }
@@ -259,12 +292,6 @@
 
 \vspace*{0.60em}
 
-%{
-%  \begin{center}
-%  \rule{5em}{0.4pt}
-%  \end{center}
-%}
-
 {
   \medskip
   \begin{center}
@@ -279,10 +306,11 @@
 }
 
 {
-  %\setlength\parindent{1em}\small\fontdimen2\font=0.3em
-  \fmtHangIndent
+  \noindent\makebox[\textwidth][c]{
+  \begin{minipage}{0.9\textwidth}
+  \setlength{\parindent}{0.5em}
   \fmtBodyTextSpaced
-
+  
   \bigskip
 
   \noindent Credo in unum Deum, Pàtrem omnipotèntem,
@@ -334,6 +362,8 @@
   \noindent Amen.
 
   \bigskip
+  \end{minipage}
+  }
 }
 
 {
