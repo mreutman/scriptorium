@@ -385,7 +385,7 @@ class Psalms:
       self.__antifons_la[chapter_str], \
       self.__antifons_en[chapter_str]
 
-cmd_psalm_division = r"\psalmKathismaStasis{$1}{$2}" + "\n\n"
+cmd_psalm_division = r"\psalmKathismaStasis{$1}{$2}" + "\n\n\n"
 cmd_psalm_chapter = r"\psalmChapter{$1}" + "\n\n"
 cmd_psalm_inscription = r"\psalmChapterWithInscription{$1}{$2}" + "\n\n"
 cmd_psalm_verse = \

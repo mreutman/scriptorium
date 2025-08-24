@@ -60,19 +60,10 @@
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
 
-  \ifthenelse{\equal{1}{#2}}
-  {
-    \needspace{14\baselineskip}
-    \begin{nscenter}
-    \dividerSection
-    \end{nscenter}
-  }
-  {
-    \needspace{14\baselineskip}
-    \begin{nscenter}
-    \dividerSection
-    \end{nscenter}
-  }
+  \needspace{9\baselineskip}
+  \begin{nscenter}
+  \dividerSection
+  \end{nscenter}
 
   \smallskip
 
@@ -151,40 +142,47 @@
   {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
   \end{nsflushleft}
 
-  \ifthenelse{\equal{1}{#2}}
+  \begin{nscenter}
+  \dividerSection
+  \end{nscenter}
+
+  \ifthenelse{\equal{17}{#1}}
   {
-    \begin{nscenter}
-    \dividerSection
-    \end{nscenter}
-  }
-  {
-    \begin{nscenter}
-    \dividerSection
-    \end{nscenter}
+    \ifthenelse{\equal{2}{#2} \or \equal{3}{#2}}
+    {
+      \medskip
+    }
   }
 }
 
 \newcommand{\psalmChapter}[1] {%
+  \medskip
+
   \needspace{5\baselineskip}
-  \begin{flushleft}
+  \begin{nsflushleft}
   {\fmtChapterText PSALMUS #1}
-  \end{flushleft}
+  \end{nsflushleft}
+
+  \smallskip
 }
 
 \newcommand{\psalmChapterWithInscription}[2] {%
-  \needspace{4\baselineskip}
-  \begin{flushleft}
+  \medskip
+
+  \needspace{7\baselineskip}
+  \begin{nsflushleft}
   {\fmtChapterText PSALMUS #1}
 
-  {\fmtInscriptionText #2}
-  \end{flushleft}
+  {\fmtInscriptionText #2~:}
+  \end{nsflushleft}
+
+  \medskip
 }
 
 \newcommand{\psalmVerse}[2] {%
   \needspace{3\baselineskip}
   \begin{nsflushleft}
-  \fmtHangIndentVerse
-  \fmtBodyText
+  \fmtHangIndentVerse\fmtBodyText
   {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}} {#2}}
   \end{nsflushleft}
 
@@ -194,22 +192,23 @@
 \begin{document}
 
 \pagestyle{empty}
+
+\begin{center}
+
+\vspace*{15em}
+
 {
-  \begin{center}
-
-  \vspace*{15em}
-
   \addfontfeature{LetterSpace=15.0}
   {\bfseries\itshape\Huge\fontdimen2\font=1.2em \uppercase{liber psalmorum}}
 
   \vspace*{5em}
 
   {\bfseries\itshape\Large\fontdimen2\font=1.2em \uppercase{secundum usum graecum}}
-
-  \vfill
-
-  \end{center}
 }
+
+\vfill
+
+\end{center}
 
 \newpage
 
@@ -218,27 +217,27 @@
 \vspace*{5em}
 
 \noindent\makebox[\textwidth][c]{
-\fmtBodyTextSpaced
-\begin{minipage}{0.9\textwidth}
-\noindent This is a free and unencumbered work released into the public domain.
+  \fmtBodyTextSpaced
+  \begin{minipage}{0.9\textwidth}
+  \noindent This is a free and unencumbered work released into the public domain.
 
-\vspace{1em}
+  \vspace{1em}
 
-\noindent Anyone is free to copy, modify, publish, use, sell, or distribute this work, either in print or digital form, for any purpose, commercial or non-commercial, and by any means.
+  \noindent Anyone is free to copy, modify, publish, use, sell, or distribute this work, either in print or digital form, for any purpose, commercial or non-commercial, and by any means.
 
-\vspace{1em}
+  \vspace{1em}
 
-\noindent\tolerance 9000 In jurisdictions that recognize copyright laws, the author or authors of this work dedicate any and all copyright interest in the work to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this document under copyright law.
+  \noindent\tolerance 9000 In jurisdictions that recognize copyright laws, the author or authors of this work dedicate any and all copyright interest in the work to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this document under copyright law.
 
-\vspace{1em}
+  \vspace{1em}
 
-\noindent\tolerance 9000 THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
+  \noindent\tolerance 9000 THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
 
-\vspace{2em}
+  \vspace{2em}
 
-\noindent For more information, visit: \hspace{\parindent} {\addfontfeature{LetterSpace=8.0}\bfseries www.sanctuscassianus.com}.
+  \noindent For more information, visit: \hspace{\parindent} {\addfontfeature{LetterSpace=8.0}\bfseries www.sanctuscassianus.com}.
 
-\end{minipage}
+  \end{minipage}
 }
 \vfill
 
@@ -307,62 +306,62 @@
 
 {
   \noindent\makebox[\textwidth][c]{
-  \begin{minipage}{0.9\textwidth}
-  \setlength{\parindent}{0.5em}
-  \fmtBodyTextSpaced
-  
-  \bigskip
+    \begin{minipage}{0.9\textwidth}
+    \setlength{\parindent}{0.5em}
+    \fmtBodyTextSpaced
+    
+    \bigskip
 
-  \noindent Credo in unum Deum, Pàtrem omnipotèntem,
+    \noindent Credo in unum Deum, Pàtrem omnipotèntem,
 
-  factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
+    factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
 
-  \bigskip
+    \bigskip
 
-  \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum,
+    \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum,
 
-  et ex Patre natum ante òmnia sáecula;
+    et ex Patre natum ante òmnia sáecula;
 
-  Lumen de Lúmine, Deum verum de Deo vero,
+    Lumen de Lúmine, Deum verum de Deo vero,
 
-  ğènitum non factum, consubstanziálem Patri, per qüem òmnia facta sunt.
+    ğènitum non factum, consubstanziálem Patri, per qüem òmnia facta sunt.
 
-  Qüi pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs,
+    Qüi pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs,
 
-  et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est.
+    et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est.
 
-  Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
+    Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
 
-  et resurréxit tèrzia die, secùndum scriptúras,
+    et resurréxit tèrzia die, secùndum scriptúras,
 
-  et asçèndit in çaelum, sèdet ad dèxteram Patris.
+    et asçèndit in çaelum, sèdet ad dèxteram Patris.
 
-  Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
+    Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
 
-  cujus regni non èrit finis.
+    cujus regni non èrit finis.
 
-  \bigskip
+    \bigskip
 
-  \noindent Et in Spíritum Sanctum, Dòminum et vivificàntem, qüi ex Patre proçédit.
+    \noindent Et in Spíritum Sanctum, Dòminum et vivificàntem, qüi ex Patre proçédit.
 
-  Qüi cum Patre et Fílio sìmul adorátur et conglorificátur,
+    Qüi cum Patre et Fílio sìmul adorátur et conglorificátur,
 
-  qüi locútus est per profétas.
+    qüi locútus est per profétas.
 
-  \bigskip
+    \bigskip
 
-  \noindent Et unam, sanctam, católicam, et apostólicam Ecclésiam.
+    \noindent Et unam, sanctam, católicam, et apostólicam Ecclésiam.
 
-  Confìteor unum baptìsma in remissiónem peccatórum.
+    Confìteor unum baptìsma in remissiónem peccatórum.
 
-  Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
+    Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
 
-  \bigskip
+    \bigskip
 
-  \noindent Amen.
+    \noindent Amen.
 
-  \bigskip
-  \end{minipage}
+    \bigskip
+    \end{minipage}
   }
 }
 
