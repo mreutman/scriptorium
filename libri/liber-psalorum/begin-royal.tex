@@ -30,7 +30,7 @@
 \newcommand{\fmtBodyText}{\small}
 \newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
-\newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.0}\footnotesize\itshape\fontdimen2\font=0.3em}
+\newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.5}\footnotesize\itshape\fontdimen2\font=0.3em}
 \newcommand{\fmtPageNumberText}{\itshape\footnotesize}
 \newcommand{\fmtRepeatText}{\itshape\footnotesize}
 \newcommand{\fmtSectionText}{\addfontfeature{LetterSpace=20.0}\bfseries\itshape\fontdimen2\font=1.2em}
@@ -162,8 +162,6 @@
   \begin{nsflushleft}
   {\fmtChapterText PSALMUS #1}
   \end{nsflushleft}
-
-  \smallskip
 }
 
 \newcommand{\psalmChapterWithInscription}[2] {%
@@ -175,18 +173,16 @@
 
   {\fmtInscriptionText #2~:}
   \end{nsflushleft}
-
-  \medskip
 }
 
 \newcommand{\psalmVerse}[2] {%
+  \medskip
+
   \needspace{3\baselineskip}
   \begin{nsflushleft}
   \fmtHangIndentVerse\fmtBodyText
   {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}} {#2}}
   \end{nsflushleft}
-
-  \medskip
 }
 
 \begin{document}
@@ -250,9 +246,9 @@
 {
   \vspace*{5em}
   {
-    \begin{center}
+    \begin{nscenter}
     {\fmtSectionText DIVISIO PSALMORUM}
-    \end{center}
+    \end{nscenter}
   }
 
   {
@@ -288,93 +284,92 @@
 }
 
 \newpage
-
-\vspace*{0.60em}
-
 {
-  \medskip
-  \begin{center}
-  {\fmtSectionText \uppercase{symbolum fidei}}
+  \vspace*{4em}
+  {
+    \begin{nscenter}
+    {\fmtSectionText \uppercase{symbolum fidei}}
 
-  \bigskip
+    \bigskip
 
-  \rule{25em}{0.4pt}
-  
-  \end{center}
-  \medskip
-}
-
-{
-  \noindent\makebox[\textwidth][c]{
-    \begin{minipage}{0.9\textwidth}
-    \setlength{\parindent}{0.5em}
-    \fmtBodyTextSpaced
+    \rule{25em}{0.4pt}
     
-    \bigskip
-
-    \noindent Credo in unum Deum, Pàtrem omnipotèntem,
-
-    factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
-
-    \bigskip
-
-    \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum,
-
-    et ex Patre natum ante òmnia sáecula;
-
-    Lumen de Lúmine, Deum verum de Deo vero,
-
-    ğènitum non factum, consubstanziálem Patri, per qüem òmnia facta sunt.
-
-    Qüi pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs,
-
-    et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est.
-
-    Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
-
-    et resurréxit tèrzia die, secùndum scriptúras,
-
-    et asçèndit in çaelum, sèdet ad dèxteram Patris.
-
-    Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
-
-    cujus regni non èrit finis.
-
-    \bigskip
-
-    \noindent Et in Spíritum Sanctum, Dòminum et vivificàntem, qüi ex Patre proçédit.
-
-    Qüi cum Patre et Fílio sìmul adorátur et conglorificátur,
-
-    qüi locútus est per profétas.
-
-    \bigskip
-
-    \noindent Et unam, sanctam, católicam, et apostólicam Ecclésiam.
-
-    Confìteor unum baptìsma in remissiónem peccatórum.
-
-    Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
-
-    \bigskip
-
-    \noindent Amen.
-
-    \bigskip
-    \end{minipage}
+    \end{nscenter}
+    \medskip
   }
-}
 
-{
-  \begin{center}
-  \rule{12.5em}{0.4pt}
+  {
+    \noindent\makebox[\textwidth][c]{
+      \begin{minipage}{0.9\textwidth}
+      \setlength{\parindent}{0.5em}
+      \fmtBodyTextSpaced
+      
+      \bigskip
 
-  \vspace*{5em}
+      \noindent Credo in unum Deum, Pàtrem omnipotèntem,
 
-  {\bfseries\LARGE †} 
-  \end{center}
+      factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
+
+      \bigskip
+
+      \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum,
+
+      et ex Patre natum ante òmnia sáecula;
+
+      Lumen de Lúmine, Deum verum de Deo vero,
+
+      ğènitum non factum, consubstanziálem Patri, per qüem òmnia facta sunt.
+
+      Qüi pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs,
+
+      et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est.
+
+      Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
+
+      et resurréxit tèrzia die, secùndum scriptúras,
+
+      et asçèndit in çaelum, sèdet ad dèxteram Patris.
+
+      Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
+
+      cujus regni non èrit finis.
+
+      \bigskip
+
+      \noindent Et in Spíritum Sanctum, Dòminum et vivificàntem, qüi ex Patre proçédit.
+
+      Qüi cum Patre et Fílio sìmul adorátur et conglorificátur,
+
+      qüi locútus est per profétas.
+
+      \bigskip
+
+      \noindent Et unam, sanctam, católicam, et apostólicam Ecclésiam.
+
+      Confìteor unum baptìsma in remissiónem peccatórum.
+
+      Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
+
+      \bigskip
+
+      \noindent Amen.
+
+      \bigskip
+      \end{minipage}
+    }
+  }
+
+  {
+    \begin{center}
+    \rule{12.5em}{0.4pt}
+
+    \vspace*{5em}
+
+    {\bfseries\LARGE †} 
+    \end{center}
+  }
 }
 
 \newpage
 
-\begin{multicols}{2}
+\begin{multicols*}{2}
