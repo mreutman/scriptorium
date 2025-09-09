@@ -18,8 +18,27 @@
   bottom=0.50in,
 ]{geometry}
 
+%\setmainfont[
+  %Path = ./../litterae/roboto-slab/static/,
+  %Extension = .ttf,
+  %UprightFont = *-Regular,
+  %BoldFont = *-Bold,
+  %ItalicFont = *-Light,
+  %BoldItalicFont= *-Black,
+%]{RobotoSlab}
+
+%\setmainfont[
+  %Path = ./../litterae/roboto-slab2/,
+  %Extension = .ttf,
+  %UprightFont = *-Test,
+  %BoldFont = *-TestBold,
+  %ItalicFont = *-Test,
+  %BoldItalicFont= *-TestBold,
+  %Numbers=Lining,
+%]{RobotoSlab}
+
 \setmainfont[
-  Path = ./../litterae/roboto-slab/static/,
+  Path = ./../litterae/roboto-slab2/,
   Extension = .ttf,
   UprightFont = *-Regular,
   BoldFont = *-Bold,
@@ -52,7 +71,7 @@
  {\par\noindent\ignorespacesafterend}
 
 \setlength{\columnsep}{\parindent}
-\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\baselinestretch}{1.05}
 \renewcommand{\thepage}{\fmtPageNumberText\arabic{page}}
 
 \newcommand{\psalmKathismaStasis}[2] {
@@ -162,6 +181,8 @@
   \begin{nsflushleft}
   {\fmtChapterText PSALMUS #1}
   \end{nsflushleft}
+  
+  \smallskip
 }
 
 \newcommand{\psalmChapterWithInscription}[2] {%
@@ -173,10 +194,12 @@
 
   {\fmtInscriptionText #2~:}
   \end{nsflushleft}
+  
+  \smallskip
 }
 
 \newcommand{\psalmVerse}[2] {%
-  \medskip
+  \smallskip
 
   \needspace{3\baselineskip}
   \begin{nsflushleft}
@@ -340,11 +363,11 @@
 
       Qüi cum Patre et Fílio sìmul adorátur et conglorificátur,
 
-      qüi locútus est per profétas.
+      qüi locútus est per prophétas.
 
       \bigskip
 
-      \noindent Et unam, sanctam, católicam, et apostólicam Ecclésiam.
+      \noindent Et unam, sanctam, cathólicam, et apostólicam Ecclésiam.
 
       Confìteor unum baptìsma in remissiónem peccatórum.
 
