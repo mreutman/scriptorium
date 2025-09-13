@@ -51,8 +51,9 @@
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
 \newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.5}\footnotesize\itshape\fontdimen2\font=0.3em}
 \newcommand{\fmtPageNumberText}{\itshape\footnotesize}
-\newcommand{\fmtRepeatText}{\itshape\footnotesize}
+\newcommand{\fmtRepeatText}{\addfontfeature{LetterSpace=5.0}\itshape\footnotesize}
 \newcommand{\fmtSectionText}{\addfontfeature{LetterSpace=20.0}\bfseries\itshape\fontdimen2\font=1.2em}
+\newcommand{\fmtSubSectionText}{\addfontfeature{LetterSpace=10.0}\bfseries\small\bfseries\fontdimen2\font=0.6em}
 \newcommand{\fmtSectionTextHeader}{\addfontfeature{LetterSpace=20.0}\footnotesize\itshape\fontdimen2\font=1.2em}
 \newcommand{\fmtVerseText}{\itshape\scriptsize}
 
@@ -74,12 +75,24 @@
 \renewcommand{\baselinestretch}{1.05}
 \renewcommand{\thepage}{\fmtPageNumberText\arabic{page}}
 
+\def\myskip{\vspace\myskipamount}
+\newskip\myskipamount   \myskipamount  =7pt plus 3pt minus 3pt
+
 \newcommand{\psalmKathismaStasis}[2] {
   \markboth
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
 
-  \needspace{9\baselineskip}
+  \ifthenelse{\equal{1}{#2}}
+  {
+    \needspace{9\baselineskip}
+  }
+  {
+    \needspace{8\baselineskip}
+  }
+
+  \smallskip
+
   \begin{nscenter}
   \dividerSection
   \end{nscenter}
@@ -87,10 +100,17 @@
   \smallskip
 
   \begin{nscenter}
-  {\fmtSectionText DIVISIO #1,#2}
+  \ifthenelse{\equal{1}{#2}}
+  {
+    \fmtSectionText DIVISIO #1,#2
+    \medskip
+  }
+  {
+    \fmtSubSectionText DIVISIO #1,#2
+    \smallskip
+  }
   \end{nscenter}
 
-  \medskip
 
   \ifthenelse{\equal{1}{#2}}
   {%
@@ -98,16 +118,16 @@
     Glória tìbi, Domine, glória tìbi.
     \end{nsflushleft}
 
-    \medskip
+    \smallskip
 
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Rex çaelèstis, Consolátor, Spíritus veritátis, qui èxtas ubíque et òmnia ìmples, Thesáurus benefiçiórum et Larğítor vitae: Vèni et màne in nobîs, àtque de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.
+    Rex çaelèstis, Consolátor, Spíritus veritátis, qui èxtas ubíque et òmnia ìmples, Thesáurus benefiçiórum et Larğítor vitae~: Vèni et màne in nobîs, àtque de òmni immundìzia mùnda nos, et sàlvas fac ànimas nostras, Benígne.
     \end{nsflushleft}
 
     \medskip
 
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nostri. \spaceRepeat {\fmtRepeatText ( rep. 3 )}
+    Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nostri. \spaceRepeat \raisebox{-0.3ex}{\fmtRepeatText ( rep. 3 )}
     \end{nsflushleft}
 
     \medskip
@@ -116,7 +136,7 @@
     Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
     \end{nsflushleft}
 
-    \medskip
+    \smallskip
 
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
     Sanctìssima Trínitas, miserére nostri. Dominátor, dele peccáta nostra. Domine, ignósce iniquitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.
@@ -125,7 +145,7 @@
     \medskip
 
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Domine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 3 )}
+    Domine, miserére. \spaceRepeat \raisebox{-0.3ex}{\fmtRepeatText ( rep. 3 )}
     \end{nsflushleft}
 
     \medskip
@@ -134,14 +154,14 @@
     Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
     \end{nsflushleft}
 
-    \medskip
+    \smallskip
 
-    \needspace{7\baselineskip}
+    %\needspace{7\baselineskip}
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Pàter noster, qui es in çaelîs, sanctificétur nomen tuum. Advèniat regnum tuum; fiat volùntas tua, sicut in çaelo et in terra. Panem nostrum supersubstanziálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in temptaziónem, sed líbera nos a Màlo. Amen.
+    Pàter noster, qui es in çaelîs, sanctificétur nomen tuum. Advèniat regnum tuum~; fiat volùntas tua, sicut in çaelo et in terra. Panem nostrum supersubstanziálem da nobîs hódie, et dimìtte nobîs débita nostra, sicut et nos dimìttimus debitóribus nostrîs, et ne nos indúcas in temptaziónem, sed líbera nos a Màlo. Amen.
     \end{nsflushleft}
 
-    \medskip
+    \smallskip
 
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
     Per oraziónes sanctórum patrum, Dòmine Jesu Chríste Fili Dei, miserére nostri.
@@ -150,7 +170,7 @@
     \medskip
 
     \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Dòmine, miserére. \spaceRepeat {\fmtRepeatText ( rep. 40 )}
+    Dòmine, miserére. \spaceRepeat \raisebox{-0.3ex}{\fmtRepeatText ( rep. 40 )}
     \end{nsflushleft}
 
     \medskip
@@ -175,9 +195,9 @@
 }
 
 \newcommand{\psalmChapter}[1] {%
-  \medskip
+  \myskip
 
-  \needspace{5\baselineskip}
+  \needspace{7\baselineskip}
   \begin{nsflushleft}
   {\fmtChapterText PSALMUS #1}
   \end{nsflushleft}
@@ -186,7 +206,7 @@
 }
 
 \newcommand{\psalmChapterWithInscription}[2] {%
-  \medskip
+  \myskip
 
   \needspace{7\baselineskip}
   \begin{nsflushleft}
@@ -308,86 +328,56 @@
 
 \newpage
 {
-  \vspace*{4em}
   {
+    \vspace*{4em}
     \begin{nscenter}
     {\fmtSectionText \uppercase{symbolum fidei}}
-
-    \bigskip
 
     \rule{25em}{0.4pt}
     
     \end{nscenter}
-    \medskip
   }
 
   {
     \noindent\makebox[\textwidth][c]{
-      \begin{minipage}{0.9\textwidth}
-      \setlength{\parindent}{0.5em}
-      \fmtBodyTextSpaced
-      
-      \bigskip
+      \begin{minipage}{0.6\textwidth}
+      \fmtBodyText
 
-      \noindent Credo in unum Deum, Pàtrem omnipotèntem,
+      \begin{nsflushleft}
+      \noindent\hangindent=1em\hangafter=1 Credo in unum Deum, Pàtrem omnipotèntem, factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
+      \end{nsflushleft}
 
-      factórem çaeli et terrae, visibìlium òmnium et invisibìlium.
+      \medskip
 
-      \bigskip
+      \begin{nsflushleft}
+      \noindent\hangindent=1em\hangafter=1 Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum, et ex Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ğènitum non factum, consubstanziálem Patri, per quem òmnia facta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs, et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est. Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est, et resurréxit tèrzia die, secùndum scriptúras, et asçèndit in çaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
+      \end{nsflushleft}
 
-      \noindent Et in unum Dòminum Jesum Christum, Fílium Dei uniğènitum,
+      \medskip
 
-      et ex Patre natum ante òmnia sáecula;
+      \begin{nsflushleft}
+      \noindent\hangindent=1em\hangafter=1 Et in Spíritum Sanctum, Dòminum et vivificàntem, qui ex Patre proçédit. Qui cum Patre et Fílio sìmul adorátur et conglorificátur, qui locútus est per prophétas.
+      \end{nsflushleft}
 
-      Lumen de Lúmine, Deum verum de Deo vero,
+      \medskip
 
-      ğènitum non factum, consubstanziálem Patri, per quem òmnia facta sunt.
+      \begin{nsflushleft}
+      \noindent\hangindent=1em\hangafter=1 Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
+      \end{nsflushleft}
 
-      Qui pròpter nos hòmines et pròpter nostram salútem desçèndit de çaelîs,
+      \medskip
 
-      et incarnátus est de Spíritu Sancto ex María Vìrğine, et hòmo factus est.
-
-      Cruçifíxus ètiam pro nobîs sub Pòntio Piláto, passus et sepùltus est,
-
-      et resurréxit tèrzia die, secùndum scriptúras,
-
-      et asçèndit in çaelum, sèdet ad dèxteram Patris.
-
-      Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos,
-
-      cujus regni non èrit finis.
-
-      \bigskip
-
-      \noindent Et in Spíritum Sanctum, Dòminum et vivificàntem, qui ex Patre proçédit.
-
-      Qui cum Patre et Fílio sìmul adorátur et conglorificátur,
-
-      qui locútus est per prophétas.
-
-      \bigskip
-
-      \noindent Et unam, sanctam, cathólicam, et apostólicam Ecclésiam.
-
-      Confìteor unum baptìsma in remissiónem peccatórum.
-
-      Et exspècto resurrecziónem mortuórum, et vitam ventúri sáeculi.
-
-      \bigskip
-
+      \begin{nsflushleft}
       \noindent Amen.
+      \end{nsflushleft}
 
-      \bigskip
       \end{minipage}
     }
   }
 
   {
+    \vspace*{2em}
     \begin{center}
-    \rule{12.5em}{0.4pt}
-
-    \vspace*{5em}
-
     {\bfseries\LARGE †} 
     \end{center}
   }
