@@ -55,7 +55,13 @@
   BoldItalicFont= *-Black,
 ]{RobotoSlab}
 
-\newcommand{\fmtBodyText}{\small}
+\newfontfamily{\liturgy}[
+  Path = ./../litterae/liturgy/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+]{Liturgy}
+
+\newcommand{\fmtBodyText}{}
 \newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
 \newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.5}\footnotesize\itshape\fontdimen2\font=0.3em}
@@ -92,115 +98,18 @@
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
 
-  \ifthenelse{\equal{1}{#2}}
-  {
-    \needspace{9\baselineskip}
-  }
-  {
-    \needspace{8\baselineskip}
-  }
-
-  \smallskip
-
+  \needspace{4\baselineskip}
   \begin{nscenter}
   \dividerSection
-  \end{nscenter}
 
-  \smallskip
+  \medskip
 
-  \begin{nscenter}
-  \ifthenelse{\equal{1}{#2}}
   {
-    \fmtSectionText DIVISIO #1,#2
-    \medskip
+    \raisebox{0.25ex}{\footnotesize\liturgy +}~~~~ {\fmtSectionText DIVISIO #1,#2} ~~~~\raisebox{0.25ex}{\footnotesize\liturgy +}
   }
-  {
-    \fmtSubSectionText DIVISIO #1,#2
-    \smallskip
-  }
-  \end{nscenter}
 
-
-  \ifthenelse{\equal{1}{#2}}
-  {%
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Glória tìbi, Domine, glória tìbi.
-    \end{nsflushleft}
-
-    \smallskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Rex čaelèstis, Consolátor, Spíritus veritátis, qui èxtas ubíque et òmnia ìmples, Thesáurus benefičiórum et Larǧítor vitae~: Vèni et màne in nobïs, àtque de òmni immundìția mùnda nos, et sàlvas fac ànimas nostras, Benígne.
-    \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Sanctus Deus, Sanctus Fortis, Sanctus Immortális, miserére nostri. \spaceRepeat \raisebox{-0.3ex}{\fmtRepeatText ( rep. 3 )}
-    \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
-    \end{nsflushleft}
-
-    \smallskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Sanctìssima Trínitas, miserére nostri. Dominátor, dele peccáta nostra. Domine, ignósce iniquitátes nostras. Sancte, vísita et sana infirmitátes nostras, pròpter nomen tuum.
-    \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Domine, miserére. \spaceRepeat \raisebox{-0.3ex}{\fmtRepeatText ( rep. 3 )}
-    \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.
-    \end{nsflushleft}
-
-    \smallskip
-
-    %\needspace{7\baselineskip}
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Pàter noster, qui es in čaelïs, sanctificétur nomen tuum. Advèniat regnum tuum~; fiat volùntas tua, sicut in čaelo et in terra. Panem nostrum supersubstanțiálem da nobïs hódie, et dimìtte nobïs débita nostra, sicut et nos dimìttimus debitóribus nostrïs, et ne nos indúcas in temptațiónem, sed líbera nos a Màlo. Amen.
-    \end{nsflushleft}
-
-    \smallskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Per orațiónes sanctórum patrum, Dòmine Jesu Chríste Fili Dei, miserére nostri.
-    \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-    Dòmine, miserére. \spaceRepeat \raisebox{-0.3ex}{\fmtRepeatText ( rep. 40 )}
-    \end{nsflushleft}
-
-    \medskip
-  }
-  
-  \needspace{7\baselineskip}
-  \begin{nsflushleft}\fmtHangIndent\fmtBodyText
-  {Glória Patri et Fílio et Spirítui Sancto, et nunc et sèmper, et in sáecula saeculórum. Amen.}
-  \end{nsflushleft}
-
-  \begin{nscenter}
   \dividerSection
   \end{nscenter}
-
-  \ifthenelse{\equal{17}{#1}}
-  {
-    \ifthenelse{\equal{2}{#2} \or \equal{3}{#2}}
-    {
-      \medskip
-    }
-  }
 }
 
 \newcommand{\psalmChapter}[1] {%
@@ -359,7 +268,7 @@
       \medskip
 
       \begin{nsflushleft}
-      \noindent\hangindent=1em\hangafter=1 Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum, et ex Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ǧènitum non fàctum, consubstanțiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desčèndit de čaelïs, et incarnátus est de Spíritu Sancto ex María Vìrǧine, et hòmo fàctus est. Cručifíxus ètiam pro nobïs sub Pònțio Piláto, passus et sepùltus est, et resurréxit tèrția die, secùndum scriptúras, et asčèndit in čaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
+      \noindent\hangindent=1em\hangafter=1 Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum, et ex Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ǧènitum non fàctum, consubstançiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desčèndit de čaelïs, et incarnátus est de Spíritu Sancto ex María Vìrǧine, et hòmo fàctus est. Cručifíxus ètiam pro nobïs sub Pònçio Piláto, passus et sepùltus est, et resurréxit tèrçia die, secùndum scriptúras, et asčèndit in čaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
       \end{nsflushleft}
 
       \medskip
@@ -371,7 +280,7 @@
       \medskip
 
       \begin{nsflushleft}
-      \noindent\hangindent=1em\hangafter=1 Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecțiónem mortuórum, et vitam ventúri sáeculi.
+      \noindent\hangindent=1em\hangafter=1 Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecçiónem mortuórum, et vitam ventúri sáeculi.
       \end{nsflushleft}
 
       \medskip
