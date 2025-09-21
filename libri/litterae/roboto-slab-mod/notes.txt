@@ -1,0 +1,2 @@
+Changes:
+- adjusting left kerning with 'b': move edge to be exactly edge of glyph
