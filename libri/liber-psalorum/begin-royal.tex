@@ -61,6 +61,7 @@
   UprightFont = *-Regular,
 ]{Liturgy}
 
+\newcommand{\maltCross}{\raisebox{0.3ex}{\scriptsize\liturgy +}}
 \newcommand{\fmtBodyText}{}
 \newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
@@ -73,9 +74,10 @@
 \newcommand{\fmtVerseText}{\itshape\scriptsize}
 
 \newcommand{\fmtHangIndent}{\noindent\hangindent=1em\hangafter=1}
-\newcommand{\fmtHangIndentVerse}{\noindent\hangindent=3em\hangafter=1}
+\newcommand{\fmtHangIndentVerse}{\noindent\hangindent=2.75em\hangafter=1}
 
-\newcommand{\dividerSection}{\rule{17.5em}{0.4pt}}
+\newcommand{\dividerSectionTop}{\rule{17.5em}{1pt}}
+\newcommand{\dividerSectionBottom}{\vspace{-6pt}\rule{17.5em}{1pt}}
 \newcommand{\spaceRepeat}{\hspace{0.6em}}
 
 \newenvironment{nscenter}
@@ -85,9 +87,13 @@
 \newenvironment{nsflushleft}
  {\parskip=0pt\par\nopagebreak\raggedright}
  {\par\noindent\ignorespacesafterend}
+ 
+\newenvironment{nsflushleftnew}
+ {\parskip=0pt\par\nopagebreak\RaggedRight}
+ {\par\noindent\ignorespacesafterend}
 
 \setlength{\columnsep}{\parindent}
-\renewcommand{\baselinestretch}{1.05}
+\renewcommand{\baselinestretch}{1.03}
 \renewcommand{\thepage}{\fmtPageNumberText\arabic{page}}
 
 \def\myskip{\vspace\myskipamount}
@@ -100,15 +106,13 @@
 
   \needspace{4\baselineskip}
   \begin{nscenter}
-  \dividerSection
-
-  \medskip
+  \dividerSectionTop
 
   {
-    \raisebox{0.25ex}{\footnotesize\liturgy +}~~~~ {\fmtSectionText DIVISIO #1,#2} ~~~~\raisebox{0.25ex}{\footnotesize\liturgy +}
+    \maltCross~~~~~~ {\fmtSectionText DIVISIO #1,#2} ~~~~~~\maltCross
   }
-
-  \dividerSection
+  
+  \dividerSectionBottom
   \end{nscenter}
 }
 
@@ -140,10 +144,12 @@
   \smallskip
 
   \needspace{3\baselineskip}
-  \begin{nsflushleft}
+  \begin{nsflushleftnew}
+  %\begin{FlushLeft}
   \fmtHangIndentVerse\fmtBodyText
-  {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}} {#2}}
-  \end{nsflushleft}
+  {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}}~{#2}}
+  %\end{FlushLeft}
+  \end{nsflushleftnew}
 }
 
 \begin{document}

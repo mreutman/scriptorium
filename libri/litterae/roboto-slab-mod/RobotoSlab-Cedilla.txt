@@ -1,7 +1,0 @@
-Center point right/left ratio = ~2.4
-Regular font: right=139, left=58
-Thin font: right=85, left=35
-Bold font: right=205, left=86
-Black font: right=246, left=103
-
-
