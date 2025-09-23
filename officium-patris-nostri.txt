@@ -1,0 +1,12 @@
+officium,frater,oblatus
+matutinum,30,20
+laudes,10,7
+prima,7,5
+tertia,7,5
+sexta,7,5
+nona,7,5
+vesperae,12,10
+completorium,7,5
+
+pater noster + ave maria (rep. N times)
+conclude gloria patri... et nunc et semper...
