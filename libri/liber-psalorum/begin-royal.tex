@@ -52,7 +52,8 @@
   UprightFont = *-Regular-test,
   BoldFont = *-Bold,
   ItalicFont = *-Light,
-  BoldItalicFont= *-Black,
+  BoldItalicFont = *-Black,
+  Ligatures = {NoCommon, NoDiscretionary},
 ]{RobotoSlab}
 
 \newfontfamily{\liturgy}[
@@ -61,7 +62,8 @@
   UprightFont = *-Regular,
 ]{Liturgy}
 
-\newcommand{\maltCross}{\raisebox{0.3ex}{\scriptsize\liturgy +}}
+\newcommand{\maltCross}{\liturgy +}
+\newcommand{\maltCrossSection}{\raisebox{0.3ex}{\scriptsize\liturgy +}}
 \newcommand{\fmtBodyText}{}
 \newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
@@ -80,6 +82,8 @@
 \newcommand{\dividerSectionBottom}{\vspace{-6pt}\rule{17.5em}{1pt}}
 \newcommand{\spaceRepeat}{\hspace{0.6em}}
 
+\newcommand{\hrulePrayers}{\rule{25em}{0.3pt}}
+
 \newenvironment{nscenter}
  {\parskip=0pt\par\nopagebreak\centering}
  {\par\noindent\ignorespacesafterend}
@@ -93,7 +97,7 @@
  {\par\noindent\ignorespacesafterend}
 
 \setlength{\columnsep}{\parindent}
-\renewcommand{\baselinestretch}{1.03}
+\renewcommand{\baselinestretch}{1.05}
 \renewcommand{\thepage}{\fmtPageNumberText\arabic{page}}
 
 \def\myskip{\vspace\myskipamount}
@@ -109,7 +113,7 @@
   \dividerSectionTop
 
   {
-    \maltCross~~~~~~ {\fmtSectionText DIVISIO #1,#2} ~~~~~~\maltCross
+    \maltCrossSection~~~~~~ {\fmtSectionText DIVISIO #1,#2} ~~~~~~\maltCrossSection
   }
   
   \dividerSectionBottom
@@ -250,61 +254,191 @@
   }
 }
 
-\newpage
+\newpage % Opening prayers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-  {
-    \vspace*{4em}
-    \begin{nscenter}
-    {\fmtSectionText \uppercase{symbolum fidei}}
+  \vspace*{2em}
 
-    \rule{25em}{0.4pt}
+Experǧefàcti e sòmno coram te pročidámus, Benígne, et tìbi čantámus, Potentìssime, hỳmnum anǧèlicum, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
+
+Glória Patri et Fílio et Spirítui Sancto.
+
+Susčitátus e sòmno et lècto a te, Dòmine, illúmina mèntem meam et àperi cor meum et làbia mea ut càntem tìbi, Sancta Trínitas, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
+
+Et nunc et sèmper, et in sáecula saeculórum. Amen.
+
+Sùbito Judex vèniet et revelabùntur ópera cunctórum. Cum timóre vèro clamámus mèdia nòcte, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
+
+
+Nunc die ad terminum vergènte, gráçias tìbi ago, Domine, et prècor ut vèspera et nòx sine peccáto sint. Cončede hoc mìhi, Salvátor, et sàlva me.
+
+  Glória Patri et Fílio et Spirítui Sancto.
+
+Nunc die in tènebras trànsito, te glorifico, Domine, et prècor ut vèspera et nòx sine scàndalo sint. Cončede hoc mìhi, Salvátor, et sàlva me.
+
+  Et nunc et sèmper, et in sáecula saeculórum. Amen.
+
+Nunc die ad finem perdùcto, te laudo, Sancte, et prècor ut vèspera et nòx sine perturbaçióne sint. Cončede hoc mìhi, Salvátor, et sàlva me.
+
+}
+
+\newpage % Core prayers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+  \vspace*{2em}
+
+  \begin{nscenter}
+  {\fmtSectionText \uppercase{pater noster}}
+
+  \hrulePrayers
+  \end{nscenter}
+
+  \bigskip
+
+  \noindent\makebox[\textwidth][c]{
+    \begin{minipage}{0.7\textwidth}
+    \fmtBodyText
+
+    \begin{nsflushleft}
+    Pàter noster, qui es in čaelïs, sanctificétur nomen tuum. Advèniat regnum tuum. Fiat volùntas tua, sicut in čaelo et in terra. Panem nostrum quotidiánum da nobïs hódie, et dimìtte nobïs débita nostra, sicut et nos dimìttimus debitóribus nostrïs, et ne nos indúcas in temptaçiónem, sed líbera nos a Màlo. Amen.
+    \end{nsflushleft}
     
-    \end{nscenter}
+    \end{minipage}
   }
 
-  {
-    \noindent\makebox[\textwidth][c]{
-      \begin{minipage}{0.6\textwidth}
-      \fmtBodyText
+  \bigskip
+  \bigskip
 
-      \begin{nsflushleft}
-      \noindent\hangindent=1em\hangafter=1 Credo in unum Deum, Pàtrem omnipotèntem, factórem čaeli et terrae, visibìlium òmnium et invisibìlium.
-      \end{nsflushleft}
+  \begin{nscenter}
+  {\fmtSectionText \uppercase{salutatio anǧelica}}
 
-      \medskip
+  \hrulePrayers
+  \end{nscenter}
+  
+  \bigskip
 
-      \begin{nsflushleft}
-      \noindent\hangindent=1em\hangafter=1 Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum, et ex Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ǧènitum non fàctum, consubstançiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desčèndit de čaelïs, et incarnátus est de Spíritu Sancto ex María Vìrǧine, et hòmo fàctus est. Cručifíxus ètiam pro nobïs sub Pònçio Piláto, passus et sepùltus est, et resurréxit tèrçia die, secùndum scriptúras, et asčèndit in čaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
-      \end{nsflushleft}
+  \noindent\makebox[\textwidth][c]{
+    \begin{minipage}{0.7\textwidth}
+    \fmtBodyText
 
-      \medskip
-
-      \begin{nsflushleft}
-      \noindent\hangindent=1em\hangafter=1 Et in Spíritum Sanctum, Dòminum et vivificàntem, qui ex Patre pročédit. Qui cum Patre et Fílio sìmul adorátur et conglorificátur, qui locútus est per prophétas.
-      \end{nsflushleft}
-
-      \medskip
-
-      \begin{nsflushleft}
-      \noindent\hangindent=1em\hangafter=1 Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecçiónem mortuórum, et vitam ventúri sáeculi.
-      \end{nsflushleft}
-
-      \medskip
-
-      \begin{nsflushleft}
-      \noindent Amen.
-      \end{nsflushleft}
-
-      \end{minipage}
-    }
+    \begin{nsflushleft}
+    Ave María, gráçia plena, Dòminus tecum; benedìcta tu in mulièribus, et benedìctus fructus vèntris tui, Jesus. Sancta María, Mater Dei, ora pro nobis peccatóribus, nunc in hora mortis nostrae. Amen.
+    \end{nsflushleft}
+    
+    \end{minipage}
   }
 
-  {
-    \vspace*{2em}
-    \begin{center}
-    {\bfseries\LARGE †} 
-    \end{center}
+  \bigskip
+  \bigskip
+
+  \begin{nscenter}
+  {\fmtSectionText \uppercase{axion estin}}
+
+  \hrulePrayers
+  \end{nscenter}
+  
+  \bigskip
+
+  \noindent\makebox[\textwidth][c]{
+    \begin{minipage}{0.7\textwidth}
+    \fmtBodyText
+
+    \begin{nsflushleft}
+    Vere dìgnum et justum est benedícere te, Deípara, beátam sèmper ac Dei nostri matrem. Honèstior quam čerubína, et ùltra comparaçiónem gloriósior quam seraphína, sine màcula ğenuìsti Deum vèrbum; purìssima Vìrğo, magnificámus vero te.
+    \end{nsflushleft}
+    
+    \end{minipage}
   }
+
+  \bigskip
+  \bigskip
+
+  \begin{nscenter}
+  {\fmtSectionText \uppercase{oraçio jesu}}
+
+  \hrulePrayers
+  \end{nscenter}
+  
+  \bigskip
+
+  \noindent\makebox[\textwidth][c]{
+    \begin{minipage}{0.7\textwidth}
+    \fmtBodyText
+
+    \begin{nsflushleft}
+    Dòmine Jesu Christe, Fili Dei, miserére mei peccatóris.
+    \end{nsflushleft}
+
+    \smallskip
+    {\hspace{2em}\fmtInscriptionText ( aut )}
+    \smallskip
+
+    \begin{nsflushleft}
+    Dòmine Jesu Christe, miserére mei.
+    \end{nsflushleft}
+
+    \smallskip
+    {\hspace{2em}\fmtInscriptionText ( aut )}
+    \smallskip
+
+    \begin{nsflushleft}
+    Kýrie, eléison
+    \end{nsflushleft}
+
+    \end{minipage}
+  }
+}
+
+\newpage % CREED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+
+  \vspace*{2em}
+
+  \begin{nscenter}
+  {\fmtSectionText \uppercase{symbolum fidei}}
+
+  \rule{25em}{0.4pt}
+  \end{nscenter}
+
+  \bigskip
+  
+  \noindent\makebox[\textwidth][c]{
+    \begin{minipage}{0.7\textwidth}
+    \fmtBodyText
+
+    \begin{nsflushleft}
+    \noindent\hangindent=1em\hangafter=1 Credo in unum Deum, Pàtrem omnipotèntem, factórem čaeli et terrae, visibìlium òmnium et invisibìlium.
+    \end{nsflushleft}
+
+    \medskip
+
+    \begin{nsflushleft}
+    \noindent\hangindent=1em\hangafter=1 Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum, et ex Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ǧènitum non fàctum, consubstançiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desčèndit de čaelïs, et incarnátus est de Spíritu Sancto ex María Vìrǧine, et hòmo fàctus est. Cručifíxus ètiam pro nobïs sub Pònçio Piláto, passus et sepùltus est, et resurréxit tèrçia die, secùndum scriptúras, et asčèndit in čaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
+    \end{nsflushleft}
+
+    \medskip
+
+    \begin{nsflushleft}
+    \noindent\hangindent=1em\hangafter=1 Et in Spíritum Sanctum, Dòminum et vivificàntem, qui ex Patre pročédit. Qui cum Patre et Fílio sìmul adorátur et conglorificátur, qui locútus est per prophétas.
+    \end{nsflushleft}
+
+    \medskip
+
+    \begin{nsflushleft}
+    \noindent\hangindent=1em\hangafter=1 Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecçiónem mortuórum, et vitam ventúri sáeculi.
+    \end{nsflushleft}
+
+    \medskip
+
+    \begin{nsflushleft}
+    \noindent Amen.
+    \end{nsflushleft}
+
+    \end{minipage}
+  }
+
+  \vspace*{3.5em}
+  \begin{center}
+  {\Large\maltCross~~~~~~~\maltCross~~~~~~~\maltCross} 
+  \end{center}
 }
 
 \newpage
