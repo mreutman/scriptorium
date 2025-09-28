@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import re
 
 kathisma = {}
 stasis = {}
@@ -329,9 +330,12 @@ class Psalms:
 
     while line:
       s = line.split('^')
+
       if (2 == len(s)):
         key = s[0].strip()
         line_la = s[1].strip()
+        line_la = re.sub(r'ǧ', 'ġ', line_la)
+        line_la = re.sub(r'č', 'ċ', line_la)
       else:
         raise ValueError("Invalid CSV")
 
