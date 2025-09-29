@@ -74,14 +74,14 @@
 \newcommand{\crossChar}{{\liturgy +}}
 \newcommand{\responseChar}{{\liturgy R}}
 \newcommand{\versicleChar}{{\liturgy V}}
-\newcommand{\maltCrossSection}{\raisebox{0.3ex}{\scriptsize\liturgy +}}
+\newcommand{\maltCrossSection}{\raisebox{0.24ex}{\scriptsize\liturgy +}}
 \newcommand{\fmtBodyText}{}
 \newcommand{\fmtBodyTextSpaced}{\fmtBodyText\fontdimen2\font=0.3em}
 \newcommand{\fmtChapterText}{\addfontfeature{LetterSpace=10.0}\small\bfseries\fontdimen2\font=0.6em}
 \newcommand{\fmtInscriptionText}{\addfontfeature{LetterSpace=3.5}\footnotesize\itshape\fontdimen2\font=0.3em}
 \newcommand{\fmtPageNumberText}{\itshape\footnotesize}
 \newcommand{\fmtRepeatText}{\addfontfeature{LetterSpace=5.0}\itshape\footnotesize}
-\newcommand{\fmtSectionText}{\addfontfeature{LetterSpace=20.0}\bfseries\itshape\fontdimen2\font=1.2em}
+\newcommand{\fmtSectionText}{\addfontfeature{LetterSpace=25.0}\bfseries\itshape\footnotesize\fontdimen2\font=1.2em}
 \newcommand{\fmtSubSectionText}{\addfontfeature{LetterSpace=10.0}\bfseries\small\bfseries\fontdimen2\font=0.6em}
 \newcommand{\fmtSectionTextHeader}{\addfontfeature{LetterSpace=20.0}\footnotesize\itshape\fontdimen2\font=1.2em}
 \newcommand{\fmtVerseText}{\itshape\scriptsize}
@@ -89,8 +89,8 @@
 \newcommand{\fmtHangIndent}{\noindent\hangindent=1em\hangafter=1}
 \newcommand{\fmtHangIndentVerse}{\noindent\hangindent=2.75em\hangafter=1}
 
-\newcommand{\dividerSectionTop}{\rule{17.5em}{1pt}}
-\newcommand{\dividerSectionBottom}{\vspace{-6pt}\rule{17.5em}{1pt}}
+\newcommand{\dividerSectionTop}{\rule{17.5em}{1pt}\vspace{-3pt}}
+\newcommand{\dividerSectionBottom}{\vspace{-8pt}\rule{17.5em}{1pt}}
 \newcommand{\spaceRepeat}{\hspace{0.6em}}
 
 \newcommand{\hrulePrayers}{\vspace{-6pt}\rule{\textwidth}{0.3pt}}
@@ -103,7 +103,7 @@
 %\newenvironment{nsflushleft}
 % {\parskip=0pt\par\nopagebreak\raggedright}
 % {\par\noindent\ignorespacesafterend}
- 
+
 \newenvironment{nsflushleft}
  {\parskip=0pt\par\nopagebreak\RaggedRight}
  {\par\noindent\ignorespacesafterend}
@@ -120,14 +120,14 @@
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
     {\hfill \fmtSectionTextHeader DIVISIO #1,#2 \hfill}
 
-  \needspace{4\baselineskip}
+  \needspace{8\baselineskip}
   \begin{nscenter}
   \dividerSectionTop
 
   {
     \maltCrossSection~~~~~~ {\fmtSectionText DIVISIO #1,#2} ~~~~~~\maltCrossSection
   }
-  
+
   \dividerSectionBottom
   \end{nscenter}
 }
@@ -139,7 +139,7 @@
   \begin{nsflushleft}
   {\fmtChapterText PSALMUS #1}
   \end{nsflushleft}
-  
+
   \smallskip
 }
 
@@ -152,7 +152,7 @@
 
   {\fmtInscriptionText #2~:}
   \end{nsflushleft}
-  
+
   \smallskip
 }
 
@@ -287,7 +287,7 @@
 
 \newpage % Opening prayers %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-  \prayerWithTitle{oraçio initialis}{%
+  \prayerWithTitle{initium}{%
     \versicleChar.~~Dòmine, làbia mea apèries.
 
     \responseChar.~~Et os meum annunçiábit laudem tuam.
@@ -300,7 +300,7 @@
 
   \skipPrayers
 
-  \prayerWithTitle{oraçio matutinae}{%
+  \prayerWithTitle{de matutina hora}{%
     \begin{nsflushleft}
     \versicleChar.~~Experġefàcti e sòmno coram te proċidámus, Benígne, et tìbi ċantámus, Potentìssime, hỳmnum anġèlicum, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
     \end{nsflushleft}
@@ -324,7 +324,7 @@
 
   \skipPrayers
 
-  \prayerWithTitle{oraçio nocturnae}{%
+  \prayerWithTitle{de nocturna hora}{%
     \begin{nsflushleft}
     \versicleChar.~~Nunc die ad terminum vergènte, gráçias tìbi ago, Domine, et prècor ut vèspera et nòx sine peccáto sint. Conċéde hoc mìhi, Salvátor, et sàlva me.
     \end{nsflushleft}
@@ -372,7 +372,7 @@
 
   \skipPrayers
 
-  \prayerWithTitle{oraçio jesu}{%
+  \prayerWithTitle{Kyrie}{%
     \begin{nsflushleft}
     Dòmine Jesu Christe, Fili Dei, miserére mei peccatóris.
     \end{nsflushleft}
@@ -393,6 +393,14 @@
     Kýrie, eléison.
     \end{nsflushleft}
   }
+
+  \skipPrayers
+
+  \prayerWithTitle{ante crucifixum}{%
+    \begin{nsflushleft}
+    Summe, gloriose Deus, illumina tenebras cordis mei, et da mihi fidem rectam, spem çertam et caritatem perfectam, sensum et cognitionem, Domine, ut faciam tuum sanctum et verax mandatum. Amen.
+    \end{nsflushleft}
+  }
 }
 \newpage % CREED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
@@ -406,7 +414,7 @@
 
     \medskip
 
-    \begin{nsflushleft} %\noindent\hangindent=1em\hangafter=1 
+    \begin{nsflushleft} %\noindent\hangindent=1em\hangafter=1
     Et in unum Dòminum Jesum Christum, Fílium Dei uniġènitum, et e Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ġènitum non fàctum, consubstançiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desċèndit de ċaelïs, et incarnátus est de Spíritu Sancto e María Vìrġine, et hòmo fàctus est. Cruċifíxus ètiam pro nobïs sub Pònçio Piláto, passus et sepùltus est, et resurréxit tèrçia die, secùndum scriptúras, et asċèndit in ċaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
     \end{nsflushleft}
 
@@ -425,7 +433,7 @@
 
   \vspace*{2em}
   \begin{center}
-  {\Large\crossChar~~~~~~~\crossChar~~~~~~~\crossChar} 
+  {\Large\crossChar~~~~~~~\crossChar~~~~~~~\crossChar}
   \end{center}
 
   \vspace*{4em}
