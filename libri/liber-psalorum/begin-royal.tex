@@ -19,6 +19,15 @@
 ]{geometry}
 
 %\setmainfont[
+  %Path = ./../litterae/bitter/static/,
+  %Extension = .ttf,
+  %UprightFont = *-Regular,
+  %BoldFont = *-Bold,
+  %ItalicFont = *-Light,
+  %BoldItalicFont= *-Black,
+%]{Bitter}
+
+%\setmainfont[
   %Path = ./../litterae/roboto-slab/static/,
   %Extension = .ttf,
   %UprightFont = *-Regular,
@@ -84,22 +93,23 @@
 \newcommand{\dividerSectionBottom}{\vspace{-6pt}\rule{17.5em}{1pt}}
 \newcommand{\spaceRepeat}{\hspace{0.6em}}
 
-\newcommand{\hrulePrayers}{\rule{20em}{0.3pt}}
+\newcommand{\hrulePrayers}{\vspace{-6pt}\rule{\textwidth}{0.3pt}}
+\newcommand{\skipPrayers}{\bigskip\medskip}
 
 \newenvironment{nscenter}
  {\parskip=0pt\par\nopagebreak\centering}
  {\par\noindent\ignorespacesafterend}
 
-\newenvironment{nsflushleft}
- {\parskip=0pt\par\nopagebreak\raggedright}
- {\par\noindent\ignorespacesafterend}
+%\newenvironment{nsflushleft}
+% {\parskip=0pt\par\nopagebreak\raggedright}
+% {\par\noindent\ignorespacesafterend}
  
-\newenvironment{nsflushleftnew}
+\newenvironment{nsflushleft}
  {\parskip=0pt\par\nopagebreak\RaggedRight}
  {\par\noindent\ignorespacesafterend}
 
 \setlength{\columnsep}{\parindent}
-\renewcommand{\baselinestretch}{1.05}
+\renewcommand{\baselinestretch}{1.2} % text line spacing
 \renewcommand{\thepage}{\fmtPageNumberText\arabic{page}}
 
 \def\myskip{\vspace\myskipamount}
@@ -150,25 +160,25 @@
   \smallskip
 
   \needspace{3\baselineskip}
-  \begin{nsflushleftnew}
+  \begin{nsflushleft}
   %\begin{FlushLeft}
   \fmtHangIndentVerse\fmtBodyText
   {\raisebox{0.6ex}{\noindent{\fmtVerseText #1.~~}}~{#2}}
   %\end{FlushLeft}
-  \end{nsflushleftnew}
+  \end{nsflushleft}
 }
 
 \newcommand{\prayerWithTitle}[2] {%
-  \begin{nscenter}
-  {\fmtSectionText \uppercase{#1}}
-
-  \hrulePrayers
-  \end{nscenter}
-  
-  \bigskip
-
   \noindent\makebox[\textwidth][c]{
     \begin{minipage}{0.75\textwidth}
+    \begin{nsflushleft}
+    {\fmtChapterText \uppercase{#1}}
+
+    \hrulePrayers
+    \end{nsflushleft}
+
+    \smallskip
+
     \fmtBodyText
 
     #2
@@ -280,53 +290,63 @@
   \prayerWithTitle{oraçio initialis}{%
     \versicleChar.~~Dòmine, làbia mea apèries.
 
-    \medskip
     \responseChar.~~Et os meum annunçiábit laudem tuam.
     \medskip
 
     \versicleChar.~~Deus in adjutórium meum intènde.
 
-    \medskip
     \responseChar.~~Dòmine, ad adjuvàndum me festína.
   }
 
-  \bigskip\bigskip
+  \skipPrayers
 
   \prayerWithTitle{oraçio matutinae}{%
+    \begin{nsflushleft}
     \versicleChar.~~Experǧefàcti e sòmno coram te pročidámus, Benígne, et tìbi čantámus, Potentìssime, hỳmnum anǧèlicum, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
+    \end{nsflushleft}
 
     \medskip
     \responseChar.~~Glória Patri et Fílio et Spirítui Sancto.
     \medskip
 
+    \begin{nsflushleft}
     \versicleChar.~~Susčitátus e sòmno et lècto a te, Dòmine, illúmina mèntem meam et àperi cor meum et làbia mea ut càntem tìbi, Sancta Trínitas, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
+    \end{nsflushleft}
 
     \medskip
     \responseChar.~~Et nunc et sèmper, et in sáecula saeculórum. Amen.
     \medskip
 
+    \begin{nsflushleft}
     \versicleChar.~~Sùbito Judex vèniet et revelabùntur ópera cunctórum. Cum timóre vèro clamámus mèdia nòcte, «~Sanctus, sanctus, sanctus es tu, Deus.~» Per oraçiónes Deíparae miserére nostri.
+    \end{nsflushleft}
   }
 
-  \bigskip\bigskip
+  \skipPrayers
 
   \prayerWithTitle{oraçio nocturnae}{%
+    \begin{nsflushleft}
     \versicleChar.~~Nunc die ad terminum vergènte, gráçias tìbi ago, Domine, et prècor ut vèspera et nòx sine peccáto sint. Cončede hoc mìhi, Salvátor, et sàlva me.
+    \end{nsflushleft}
 
     \medskip
     \responseChar.~~Glória Patri et Fílio et Spirítui Sancto.
     \medskip
 
+    \begin{nsflushleft}
     \versicleChar.~~Nunc die in tènebras trànsito, te glorifico, Domine, et prècor ut vèspera et nòx sine scàndalo sint. Cončede hoc mìhi, Salvátor, et sàlva me.
+    \end{nsflushleft}
 
     \medskip
     \responseChar.~~Et nunc et sèmper, et in sáecula saeculórum. Amen.
     \medskip
 
+    \begin{nsflushleft}
     \versicleChar.~~Nunc die ad finem perdùcto, te laudo, Sancte, et prècor ut vèspera et nòx sine perturbaçióne sint. Cončede hoc mìhi, Salvátor, et sàlva me.
+    \end{nsflushleft}
   }
 
-  \bigskip\bigskip
+  \skipPrayers
 
   \prayerWithTitle{pater noster}{%
     \begin{nsflushleft}
@@ -334,7 +354,7 @@
     \end{nsflushleft}
   }
 
-  \bigskip\bigskip
+  \skipPrayers
 
   \prayerWithTitle{salutatio anǧelica}{%
     \begin{nsflushleft}
@@ -342,7 +362,7 @@
     \end{nsflushleft}
   }
 
-  \bigskip\bigskip
+  \skipPrayers
 
   \prayerWithTitle{axion estin}{%
     \begin{nsflushleft}
@@ -350,7 +370,7 @@
     \end{nsflushleft}
   }
 
-  \bigskip\bigskip
+  \skipPrayers
 
   \prayerWithTitle{oraçio jesu}{%
     \begin{nsflushleft}
@@ -379,47 +399,28 @@
 
   \vspace*{\fill}
 
-  \begin{nscenter}
-  {\fmtSectionText \uppercase{symbolum fidei}}
-
-  \rule{25em}{0.4pt}
-  \end{nscenter}
-
-  \bigskip
-  
-  \noindent\makebox[\textwidth][c]{
-    \begin{minipage}{0.7\textwidth}
-    \fmtBodyText
-
+  \prayerWithTitle{symbolum fidei}{%
     \begin{nsflushleft}
-    \noindent\hangindent=1em\hangafter=1 Credo in unum Deum, Pàtrem omnipotèntem, factórem čaeli et terrae, visibìlium òmnium et invisibìlium.
+    Credo in unum Deum, Pàtrem omnipotèntem, factórem čaeli et terrae, visibìlium òmnium et invisibìlium.
+    \end{nsflushleft}
+
+    \medskip
+
+    \begin{nsflushleft} %\noindent\hangindent=1em\hangafter=1 
+    Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum, et e Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ǧènitum non fàctum, consubstançiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desčèndit de čaelïs, et incarnátus est de Spíritu Sancto e María Vìrǧine, et hòmo fàctus est. Cručifíxus ètiam pro nobïs sub Pònçio Piláto, passus et sepùltus est, et resurréxit tèrçia die, secùndum scriptúras, et asčèndit in čaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
     \end{nsflushleft}
 
     \medskip
 
     \begin{nsflushleft}
-    \noindent\hangindent=1em\hangafter=1 Et in unum Dòminum Jesum Christum, Fílium Dei uniǧènitum, et e Patre natum ante òmnia sáecula. Lumen de Lúmine, Deum verum de Deo vero, ǧènitum non fàctum, consubstançiálem Patri, per quem òmnia fàcta sunt. Qui pròpter nos hòmines et pròpter nostram salútem desčèndit de čaelïs, et incarnátus est de Spíritu Sancto e María Vìrǧine, et hòmo fàctus est. Cručifíxus ètiam pro nobïs sub Pònçio Piláto, passus et sepùltus est, et resurréxit tèrçia die, secùndum scriptúras, et asčèndit in čaelum, sèdet ad dèxteram Patris. Et ìterum ventúrus est cum glória, judicáre vivos et mórtuos, cujus regni non èrit finis.
+    Et in Spíritum Sanctum, Dòminum et vivificàntem, qui e Patre pročédit. Qui cum Patre et Fílio sìmul adorátur et conglorificátur, qui locútus est per prophétas.
     \end{nsflushleft}
 
     \medskip
 
     \begin{nsflushleft}
-    \noindent\hangindent=1em\hangafter=1 Et in Spíritum Sanctum, Dòminum et vivificàntem, qui e Patre pročédit. Qui cum Patre et Fílio sìmul adorátur et conglorificátur, qui locútus est per prophétas.
+    Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecçiónem mortuórum, et vitam ventúri sáeculi. Amen.
     \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}
-    \noindent\hangindent=1em\hangafter=1 Et unam, sanctam, cathólicam, et apostólicam Ecclésiam. Confìteor unum baptìsma in remissiónem peccatórum. Et exspècto resurrecçiónem mortuórum, et vitam ventúri sáeculi.
-    \end{nsflushleft}
-
-    \medskip
-
-    \begin{nsflushleft}
-    \noindent Amen.
-    \end{nsflushleft}
-
-    \end{minipage}
   }
 
   \vspace*{2em}
